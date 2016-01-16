@@ -1,0 +1,26 @@
+- if notice
+  %p#notice= Chart
+
+%p
+  %b> Glcode:
+  = @chart.glcode 
+
+%p
+  
+  %b> Gst:
+  = @chart.gst 
+
+%p
+  %b> Code:
+  = @chart.code 
+
+%p
+  %b> Content:
+  = @chart.content 
+
+%p
+  %b> Header:
+  = @chart.header 
+
+= link_to 'Edit', edit_chart_path(@chart) 
+= link_to 'Back', charts_path 

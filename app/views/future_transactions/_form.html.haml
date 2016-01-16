@@ -1,0 +1,16 @@
+= render :partial => 'layouts/megatrans'
+
+<script>
+type="text/javascript"
+$(document).ready(function () {
+$("#chb_gst_f").click(function () {
+if ($(this).is(":checked")) {
+$("#nf_net_f").prop("disabled", true);
+$("#nf_total_f").prop("disabled", false);
+} else {
+$("#nf_total_f").prop("disabled", true);
+$("#nf_net_f").prop("disabled", false);
+}
+});
+});
+</script>

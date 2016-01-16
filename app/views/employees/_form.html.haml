@@ -1,0 +1,59 @@
+= form_for(@employee) do |f| 
+  - if @employee.errors.any?
+    #error_explanation
+      %h2= pluralize(@employee.errors.count, "error") 
+      "prohibited this chart from being saved:"
+    %ul - @employee.errors.full_messages.each do |msg|
+    %li = msg
+
+
+  #field
+    = f.label :First_name 
+    = f.text_field :firstname
+  
+  #field
+    = f.label :Last_name 
+    = f.text_field :lastname
+    
+  #field
+    = f.label :IRD_number
+    %br 
+    = f.number_field :irdcode
+
+  #field
+    = f.label :Procent_of_ACC 
+    %br
+    = f.number_field :accprocent, :id => "pr_of_acc",:type => "number", :step => ".01", placeholder: "1.45"
+
+  #field
+    = f.label :Tax_code
+    %br
+    = f.select :taxcode, options_for_select({"M" => "M","M SL" => "M SL","ME" => "ME","ME SL" => "ME SL","SB" => "SB","SB SL" => "SB SL","S" => "S","S SL" => "S SL","SH" => "SH","SH SL" => "SH SL","ST" => "ST","ST SL" => "ST SL","WT" => "WT","STC" => "STC","CAE" => "CAE","EDW" => "EDW","NSW" => "NSW"}),{},{:id => "sf_taxcode", :onChange  => "findselected()"}
+    
+  #field
+    = f.label :Procent_tax_code
+    %br
+    = f.text_field :taxprocent, :type => "number", :step => "0.5", placeholder: "20", :id => "tf_taxprocent", :disabled => ''
+
+  #field
+    = f.label :Kiwisaver_enter_procentage_as_integer
+    %br 
+    = f.number_field :kiwisaver, :type => "number", :step => "1", placeholder: "3"
+
+
+  #actions
+    = f.submit
+
+
+
+
+<script>
+function findselected() {
+var x = document.getElementById("sf_taxcode").value;
+if(x=="WT" || x=="STC" || x=="CAE" || x=="EDW" || x=="NSW")
+{document.getElementById("tf_taxprocent").disabled = false;
+}
+else{document.getElementById("tf_taxprocent").disabled = true;}
+}
+</script>
+

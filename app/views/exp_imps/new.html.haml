@@ -1,0 +1,12 @@
+= "Processed file:"
+= form_tag exp_imps_path, :method => 'post' do
+  = "Table:"
+  = select_tag(:argt, options_for_select({"users" => "1", "charts" => "2"}))
+  %pre
+  = "Action:"
+  = select_tag(:argb, options_for_select(@task))
+  %pre
+  = "csv File:"
+  = file_field_tag :args, multipart: true
+  %pre
+  = submit_tag "Do it"

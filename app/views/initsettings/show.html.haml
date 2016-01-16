@@ -1,0 +1,15 @@
+- if notice
+  %p#notice= Initsetting
+
+%p
+  %b> Number:
+  = @initsetting.periodint 
+
+%p
+  
+  %b> Content:
+  = @initsetting.periodtext 
+
+
+= link_to 'Edit', edit_initsetting_path(@initsetting) 
+= link_to 'Back', initsettings_path 

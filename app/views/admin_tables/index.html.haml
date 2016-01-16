@@ -1,0 +1,18 @@
+%p#notice= notice
+%h1 Listing Admin Tables
+%table
+  %thead
+    %tr
+      %th{:colspan => "3"}
+  %tbody
+    - @admin_tables.each do |admin_table|
+      %tr
+        %td
+          = admin_table.name
+        %td
+          %pre
+        %td= link_to 'Show', admin_table
+        %td= link_to 'Edit', edit_admin_table_path(admin_table)
+        %td= link_to 'Destroy', admin_table, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Admin table', new_admin_table_path

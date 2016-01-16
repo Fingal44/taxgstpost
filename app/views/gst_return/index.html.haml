@@ -1,0 +1,4 @@
+= form_tag({ :action => "display"}, :method => "get") do
+  = select_month(Date.today)
+  = select_year(Date.today, :start_year => Date.today.year - 3, :end_year => Date.today.year + 1)
+  = submit_tag "Search", :id => 'search'

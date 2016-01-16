@@ -1,0 +1,49 @@
+- if notice
+  %p#notice= FutureTransaction
+
+%p
+  %b> Date:
+  = @future_transaction.date 
+
+
+%p
+  %b> Glcode:
+  = @future_transaction.chart_clones_id 
+
+
+%p
+  %b> Code:
+  = @future_transaction.code
+
+
+%p
+  %b> AmountTotal:
+  = @future_transaction.amounttotal 
+
+%p
+  %b> Gsttype:
+  = @future_transaction.gsttype 
+
+%p
+  %b> Gstamount:
+  = @future_transaction.gstamount
+
+%p
+  %b> Netamount:
+  = @future_transaction.netamount 
+
+%p
+  %b> User:
+  = @future_transaction.users_id 
+  
+%p
+  %b> Company:
+  = @future_transaction.co 
+
+%p
+  %b> For_moving:
+  = @future_transaction.for_moving
+
+
+= link_to 'Edit', edit_future_transaction_path(@future_transaction) |
+= link_to 'Back', future_transactions_path

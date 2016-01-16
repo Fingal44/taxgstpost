@@ -1,0 +1,267 @@
+%h1= t('Tax data')
+%br
+%h2= 'Company'
+
+%table{:border => 1,  width: '80%'}
+  %tbody
+    %tr
+      
+      %th Code
+      %th Header
+      %th Content
+      %th Amount
+      %th Header Amount
+      %th Total
+
+    %tr
+      
+      %td 
+      %td 
+        %h4 Income
+      %td
+      %td
+      %td
+      %td
+    
+    %tr
+
+    - @chartwi.each do |charti| 
+      
+      - if charti.amount_2 > 0
+       
+        - if charti.header == 1
+          
+          %td
+            %b= charti.code
+          %td
+            %b= truncate(charti.content, :length => 36)
+          %td
+          %td
+          %td
+            %b= charti.amount_2
+          %td
+
+        - else
+          %td= charti.code
+          %td 
+          %td= truncate(charti.content, :length => 36)
+          %td= charti.amount_2
+          %td 
+          %td
+      %tr 
+    %tr
+
+      %td 
+      %td <b>Total income
+      %td
+      %td
+      %td
+      %td
+        %b= @amount_2itotal
+
+
+    %tr
+    
+      %td 
+      %td 
+        %h4 Expenses
+      %td
+      %td
+      %td
+      %td
+    
+    %tr   
+
+    - @chartwe.each do |chart| 
+     
+      - if chart.amount_2 > 0
+        
+        - if chart.header == 1
+          %td
+            %b= chart.code
+          %td
+            %b= truncate(chart.content, :length => 36)
+          %td
+          %td
+          %td
+            %b= chart.amount_2
+          %td
+
+        - else
+          %td= chart.code
+          %td 
+          %td= truncate(chart.content, :length => 36)
+          %td= chart.amount_2
+          %td
+          %td 
+
+        %tr  
+    %tr 
+    
+    - if @ftran_2_exp != nil
+      - if @ftran_2_exp  > 0        
+        %td 
+        %td <b>Not paid yet salary expenses
+        %td
+        %td
+        %td
+          %b= @ftran_2_exp
+        %td
+    %tr   
+      %td 
+      %td <b>Total expenses
+      %td
+      %td
+      %td
+      %td
+        %b= @amount_2etotal
+    
+    %tr   
+%br
+%b> Company net income:
+%b=number_with_precision(@co_inc, :precision => 2)
+%br
+%b> Company Income tax:
+%b=number_with_precision(@co_inc_tax, :precision => 2)
+
+%br
+%h2= 'Person'
+
+%table{:border => 1,  width: '80%'}
+  %tbody
+    %tr
+      
+      %th Code
+      %th Header
+      %th Content
+      %th Amount
+      %th Header Amount
+      %th Total
+
+    %tr
+      
+      %td 
+      %td 
+        %h4 Income
+      %td
+      %td
+      %td
+      %td
+    
+    %tr
+
+    - @chartwi.each do |charti| 
+      
+      - if charti.amount_1 > 0
+       
+        - if charti.header == 1
+          
+          %td
+            %b= charti.code
+          %td
+            %b= truncate(charti.content, :length => 36)
+          %td
+          %td
+          %td
+            %b= charti.amount_1
+          %td
+
+        - else
+          %td= charti.code
+          %td 
+          %td= truncate(charti.content, :length => 36)
+          %td= charti.amount_1
+          %td 
+          %td
+      %tr 
+    %tr
+
+      %td 
+      %td <b>Total income
+      %td
+      %td
+      %td
+      %td
+        %b= @amount_1itotal
+
+
+    %tr
+    
+      %td 
+      %td 
+        %h4 Expenses
+      %td
+      %td
+      %td
+      %td
+    
+    %tr   
+
+    - @chartwe.each do |chart| 
+     
+      - if chart.amount_1 > 0
+        
+        - if chart.header == 1
+          %td
+            %b= chart.code
+          %td
+            %b= truncate(chart.content, :length => 36)
+          %td
+          %td
+          %td
+            %b= chart.amount_1
+          %td
+
+        - else
+          %td= chart.code
+          %td 
+          %td= truncate(chart.content, :length => 36)
+          %td= chart.amount_1
+          %td
+          %td 
+
+        %tr  
+    %tr 
+    
+    - if @ftran_1_exp != nil
+      - if @ftran_1_exp  > 0
+        %td 
+        %td <b>Not paid yet salary expenses
+        %td
+        %td
+        %td
+          %b= @ftran_1_exp
+        %td
+        
+    
+    %tr       
+      %td 
+      %td <b>Total expenses
+      %td
+      %td
+      %td
+      %td
+        %b= @amount_1etotal
+    
+    %tr   
+%br
+%b> Person net income:
+%b=@pe_inc
+%br
+%b> Person Income tax:
+%b=@pe_inc_tax
+%br
+%br
+%b> Recomendations:
+%br
+%b> You have unallocated expenses:
+%b=@unallocated_expenses
+%br
+%b> The best allocation is:
+%br
+%b> To company:
+%b=@coextra
+%br
+%b> To person:
+%b=@peextra
+

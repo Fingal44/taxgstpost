@@ -1,0 +1,5 @@
+= form_tag reallocate_data_path, :method => 'post' do
+  = "Entity:"
+  = select_tag :argent, options_for_select( {"Person" => "1", "Company" => "2"}) 
+  
+  = submit_tag "Reallocate"

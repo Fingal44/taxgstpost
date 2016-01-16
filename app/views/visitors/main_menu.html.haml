@@ -1,0 +1,67 @@
+%h3 Welcome
+- case current_user.category
+- when 0
+  = "Your subscription was expired"
+- when 1
+  = "You are in the test mode now until"
+- when 2
+  = "You are subscribed now until"
+- when 3
+  = "Привет, морда"
+= current_user.expire_date.to_s
+
+%p
+  %b= link_to 'DateSettings:', edit_datesetting_path(@datesetting.first)
+  Setting start and end dates for working period
+%p
+  %b= link_to 'Transactions:', transactions_path
+  - if Transaction.any?
+    = Transaction.where("users_id = ?",current_user.id).count
+    registered. Display and edit your transactions during working period
+%p
+  %b= link_to 'TempTransactions:', temp_transactions_path
+  - if TempTransaction.any?
+    = TempTransaction.where("users_id = ?",current_user.id).count
+  registered. Display and edit transferred from bank transactions, moving them to transactions.
+%p
+  %b= link_to 'GST Return:', :controller => "transactions", :action => "gst_return"
+  Prepare data for GST Return form
+%p
+  %b= link_to 'Tax Return:', :controller => "transactions", :action => "tax_return"
+  Prepare data for IR3 and IR4 forms
+  - if current_user.category > 0
+    %p
+      %b= link_to 'Employees:', employees_path
+      - if Employee.any?
+        = Employee.where("users_id = ?",current_user.id).count
+        registered. Create and edit employees, automatic enter all Payee transactions for salary/wages payment.
+    %p
+      %b= link_to 'Charts:', charts_path
+      - if Chart.any?
+        = Chart.where(users_id: current_user.id).count
+        registered. Display, create and edit Charts.
+    %p
+      - if FutureTransaction.any?
+        %b= link_to 'FutureTransactions:', future_transactions_path
+        = FutureTransaction.where("users_id = ?",current_user.id).count
+        registered. Display, edit and move to transactions approved payee transactions.
+    %p
+      %b= link_to 'TransferData:', transfer_data_path
+      Transfer .csv file from bank to Temp_transactions.
+    %p
+      - if TempTransaction.any?
+        %b= link_to 'Reallocate:', reallocate_path
+        = Transaction.where("users_id = ? and co = ?",current_user.id,0).count
+        registered
+  
+  - if current_user.category < 3
+    %p
+  - else
+    %p
+      %b= link_to 'Tables:', admin_tables_path
+      - if AdminTable.any?
+        = AdminTable.all.count
+        registered
+  
+
+

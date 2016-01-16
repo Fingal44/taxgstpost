@@ -1,0 +1,55 @@
+= form_for(@megatrans) do |f|
+  - if @megatrans.errors.any?
+    #error_explanation
+      %h2= pluralize(@megatrans.errors.count, "error")
+      "prohibited this user from being saved:"
+    %ul - @megatrans.errors.full_messages.each do |msg|
+    %li = msg
+
+  #field
+    - if @megatrans.gsttype == 1
+      = f.check_box :gst_include, :id => "chb_gst", :checked => true
+    - else
+      = f.check_box :gst_include, :id => "chb_gst", :checked => @megatrans.gsttype    
+    = f.label :GST_included
+
+  #field
+    = f.label :Date
+    = f.date_select :date
+        
+  #field
+    = f.label :AmountTotal
+    %br
+    = f.number_field :amounttotal, :id => "nf_total",:type => "number", :step => ".01"
+  
+  #field
+    = f.label :Gstamount 
+    %br
+    = f.number_field :gstamount, :id => "nf_gst", :disabled => 'disabled'
+
+  #field
+    = f.label :Netamount 
+    %br
+    = f.number_field :netamount, :id => "nf_net", :disabled => 'disabled',:type => "number", :step => ".01"
+
+  #field
+    = f.label :Category
+    %br
+    - if @megatrans.chart_clones_id != nil
+      = f.select :chart_clones_id, options_for_select(@chart_clones.collect { |ccc| [ccc.content.titleize, ccc.id] }, @megatrans.chart_clones_id), {}, { id: 'chart_clones_select' }
+    - else
+      = f.select :chart_clones_id, options_for_select(@chart_clones.collect { |ccc| [ccc.content.titleize, ccc.id] }, 6), {}, { id: 'chart_clones_select' }    
+
+    
+  #field
+    = f.label :Code
+    %br
+    = f.select :code, options_for_select(@partcharts.collect { |ccd| [ccd.content.titleize, ccd.code] },  @megatrans.code), {}, { id: 'charts_select' }
+
+  #field
+    = f.label :Entity 
+    = f.select :co, options_for_select( {"Company" => "2", "Person" => "1", "Reserve" => "0"}, {"selected" => @megatrans.co})    
+ 
+  #actions
+    = f.submit
+

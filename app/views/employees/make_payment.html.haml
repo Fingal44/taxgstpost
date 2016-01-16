@@ -1,0 +1,8 @@
+= form_tag @employee_payment, :method => 'post' do
+  = "Earned amount:"
+  = number_field_tag :brutto
+  %br
+  = "Working period"
+  = select_tag :timeperiod, options_for_select( {"Weekly" => "1", "Fortunately" => "2", "Monthly" => "3"}) 
+   
+  = submit_tag "Create all payments in Future_transactions"

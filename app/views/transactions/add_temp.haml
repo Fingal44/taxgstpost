@@ -1,0 +1,14 @@
+= "Processed file:"
+%table
+  %tbody
+    %tr
+      %th ID
+      %th "        "    
+      %th Content
+     
+    - @chh.each do |transaction| 
+      %tr
+        %td= transaction.id
+        %td= "        "
+        %td= transaction.content
+       

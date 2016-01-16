@@ -1,0 +1,48 @@
+%h1= t('Listing future transactions')
+= form_tag @fts do 
+  %table
+    %tbody
+      %tr
+        %th Date
+        %th "        "    
+        %th Glcode
+        %th "        "
+        %th Code
+        %th "        "
+        %th Amounttotal
+        %th Gsttype
+        %th Gstamount
+        %th Netamount
+        %th User
+        %th Co
+        %th For_Moving
+        
+        %th
+        %th
+      - @future_transactions.each do |transaction| 
+        %tr
+          %td= transaction.date
+          %td= "        "
+          %td= transaction.chart_clones_id
+          %td= "        "
+          %td= transaction.code
+          %td= "        "
+          %td= transaction.amounttotal
+          %td= transaction.gsttype
+          %td= transaction.gstamount
+          %td= transaction.netamount
+          %td= transaction.users_id
+          %td= transaction.co
+          
+          %td= check_box_tag "transaction_ids[]", transaction.id
+          %td= link_to 'Show', transaction
+          %td= link_to 'Edit', edit_future_transaction_path(transaction)
+          %td= link_to 'Destroy', transaction, method: :delete, class: :destroy, data: { confirm: 'Are you sure?' } 
+  %br        
+  
+  #actions
+    = submit_tag "Move to transactions"
+
+= link_to 'New Future Transaction', new_future_transaction_path
+= link_to 'Compact table', :controller => 'future_transactions', :action => "compact"
+

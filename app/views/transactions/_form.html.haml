@@ -1,0 +1,35 @@
+= render :partial => 'layouts/megatrans'
+
+<script>
+type="text/javascript"
+$(document).ready(function () {
+$("#chb_correc_extra").click(function () {
+if ($(this).is(":checked")) {
+$("#chb_tax_extra").prop("disabled", false);
+$("#chb_acc_extra").prop("disabled", false);
+$("#chb_sl_extra").prop("disabled", false);
+$("#chb_ks_extra").prop("disabled", false);
+} else {
+$("#chb_tax_extra").prop("disabled", true);
+$("#chb_acc_extra").prop("disabled", true);
+$("#chb_sl_extra").prop("disabled", true);
+$("#chb_ks_extra").prop("disabled", true);
+}
+});
+});
+</script>
+
+<script>
+type="text/javascript"
+$(document).ready(function () {
+$("#chb_gst").click(function () {
+if ($(this).is(":checked")) {
+$("#nf_net").prop("disabled", true);
+$("#nf_total").prop("disabled", false);
+} else {
+$("#nf_total").prop("disabled", true);
+$("#nf_net").prop("disabled", false);
+}
+});
+});
+</script>

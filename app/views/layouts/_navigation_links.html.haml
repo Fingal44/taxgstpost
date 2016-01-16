@@ -1,0 +1,16 @@
+- if user_signed_in?
+  %li= link_to 'Main menu', controller: '/visitors', action: 'main_menu', class: 'navbar-brand'
+  %li= link_to 'Edit account', edit_user_registration_path
+  %li= link_to 'Sign out', destroy_user_session_path, :method=>'delete'
+- else
+  %li= link_to 'Sign in', new_user_session_path
+  %li= link_to 'Sign up', new_user_registration_path
+- if user_signed_in?
+  - case current_user.category
+  - when 3
+    %li= link_to 'Admin service', controller: '/visitors', action: 'adminservice', class: 'navbar-brand'
+%li= link_to 'Contacts', controller: '/visitors', action: 'contacts', class: 'navbar-brand'
+- if $lang == 0
+  %li= link_to 'Russian', controller: '/visitors', action: 'index_rus', class: 'navbar-brand'
+- else
+  %li= link_to 'English', controller: '/visitors', action: 'index', class: 'navbar-brand'

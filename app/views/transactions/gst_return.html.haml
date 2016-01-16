@@ -1,0 +1,48 @@
+%h1= t('GST data')
+%br
+%h1= t('Company')
+%p
+  %b> Income:
+  = @gst_4_2
+%p
+  %b> GST collected:
+  = @gstgst_4_2
+
+%p
+  %b> Expenses:
+  = @gst_6_2
+%p
+  %b> GST lost:
+  = @gstgst_6_2
+%p
+  %b> GST to pay:
+  = @gst_rez_2
+      
+%br
+%h1= t('Person')
+%p
+  %b> Income:
+  = @gst_4_1
+%p
+  %b> GST collected:
+  = @gstgst_4_1
+%p
+  %b> Expenses:
+  = @gst_6_1
+%p
+  %b> GST lost:
+  = @gstgst_6_1
+%p
+  %b> GST to pay:
+  = @gst_rez_1
+%br
+%h1= t('Reserve')
+%p
+  %b> Expenses:
+  = @gst_6_0
+%p
+  %b> GST lost:
+  = @gstgst_6_0 
+  
+
+= link_to 'Back', controller: '/visitors', action: 'main_menu'

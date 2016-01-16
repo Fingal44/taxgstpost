@@ -1,0 +1,23 @@
+%h1= t('Listing Initsettings')
+%table
+  %tbody
+    %tr
+      %th Number
+      %th "  "
+      %th Content
+      %th
+      %th
+      %th 
+        
+    - @initsettings.each do |initsetting| 
+      %tr
+        %td= initsetting.periodint
+        %td="  "
+        %td= initsetting.periodtext
+        %td
+        %td= link_to 'Show', initsetting
+        %td= link_to 'Edit', edit_initsetting_path(initsetting)
+        %td= link_to 'Destroy', initsetting, method: :delete, data: { confirm: 'Are you sure?' }
+%br
+        
+= link_to 'New Initsetting', new_initsetting_path

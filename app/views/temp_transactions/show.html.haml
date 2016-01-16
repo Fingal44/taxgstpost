@@ -1,0 +1,44 @@
+- if notice
+  %p#notice= TempTransaction
+
+%p
+  %b> Date:
+  = @temp_transaction.date 
+
+
+%p
+  %b> Glcode:
+  = @temp_transaction.chart_clones_id 
+
+
+%p
+  %b> Code:
+  = @temp_transaction.code 
+
+
+%p
+  %b> AmountTotal:
+  = @temp_transaction.amounttotal 
+
+%p
+  %b> Gsttype:
+  = @temp_transaction.gsttype 
+
+%p
+  %b> Gstamount:
+  = @temp_transaction.gstamount
+
+%p
+  %b> Netamount:
+  = @temp_transaction.netamount 
+
+%p
+  %b> User:
+  = @temp_transaction.users_id 
+  
+%p
+  %b> Company:
+  = @temp_transaction.co 
+
+= link_to 'Edit', edit_temp_transaction_path(@temp_transaction) |
+= link_to 'Back', temp_transactions_path 

@@ -1,0 +1,14 @@
+%p#notice= notice
+%h1 Listing Gst Returns
+%table
+  %thead
+    %tr
+      %th{:colspan => "3"}
+  %tbody
+    - @gst_returns.each do |gst_return|
+      %tr
+        %td= link_to 'Show', gst_return
+        %td= link_to 'Edit', edit_gst_return_path(gst_return)
+        %td= link_to 'Destroy', gst_return, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Gst return', new_gst_return_path

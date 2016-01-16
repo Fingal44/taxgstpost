@@ -1,0 +1,39 @@
+%h1= t('Listing transactions')
+
+%table
+  %tbody
+    %tr
+      %th Date
+      %th Glcode
+      %th Code
+      %th Amounttotal
+      %th Gsttype
+      %th Gstamount
+      %th Netamount
+      %th User
+      %th Co
+      %th 
+      %th
+      %th
+    - @transactions.each do |transaction| 
+      %tr
+        %td= transaction.date
+        %td= transaction.chart_clones_id
+        %td= transaction.code
+        %td= transaction.amounttotal
+        %td= transaction.gsttype
+        %td= transaction.gstamount
+        %td= transaction.netamount
+        %td= transaction.users_id
+        %td= transaction.co
+
+        %td
+          %b= link_to 'Show', transaction
+        %td
+          %b= link_to 'Edit', edit_transaction_path(transaction)
+        %td
+          %b= link_to 'Destroy', transaction, method: :delete, class: :destroy, data: { confirm: 'Are you sure?' } 
+%br 
+- if current_user.category > 0       
+  %b= link_to 'New Transaction', new_transaction_path
+ 

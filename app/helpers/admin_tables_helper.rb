@@ -1,0 +1,2 @@
+module AdminTablesHelper
+end

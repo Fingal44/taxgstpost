@@ -1,0 +1,31 @@
+// Place all the styles related to the TempTransactions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+%html
+  %head
+    %style
+      
+      th, td {
+      	text-align: center;
+      }
+      
+      th.date, td.date {
+        text-align: center;
+        border: 1px solid black;
+        color: green;
+        overflow: hidden;
+        display: inline-block;
+        white-space: nowrap;
+      }
+      
+      th.short, td.short {
+        text-align: center;
+        border: 1px solid black;
+        overflow: hidden;
+      }
+
+      table, tr {
+      	min-width: 100%;
+      }
+
