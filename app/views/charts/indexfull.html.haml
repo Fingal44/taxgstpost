@@ -1,0 +1,26 @@
+%h1= t('Listing Charts')
+%table
+  %tbody
+    %tr
+      %th Glcode
+      %th Code
+      %th Content
+      %th Header
+      %th Gst
+      %th User
+      %th
+      %th
+      %th 
+    - @charts.each do |chart| 
+      %tr
+        %td= chart.glcode
+        %td= chart.code
+        %td= chart.content
+        %td= chart.header
+        %td= chart.gst
+        %td= chart.users_id
+        %td
+        %td= link_to 'Show', chart
+        %td= link_to 'Edit', edit_chart_path(chart)
+        %td= link_to 'Destroy', chart, method: :delete, :class=>:destroy, data: { confirm: 'Are you sure?' }
+%br
