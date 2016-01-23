@@ -7,8 +7,11 @@ def create_future_trans(their_amount, their_period)
       else
         @_ks = (@_ks/100).to_f
       end
-      @_taxpr = (@employee.taxprocent/100).to_f #Tax procent for special codes
-      
+      if @employee.taxprocent.nil?
+        @_taxpr = 0
+      else
+        @_taxpr = (@employee.taxprocent/100).to_f #Tax procent for special codes
+      end
       @_kscontribution = 0 #Employer contribution to kiwisaver
       @_ksdeduction = 0 #Employee kiwisaver deduction
       their_amount_f = their_amount.to_f
@@ -30,6 +33,7 @@ def create_future_trans(their_amount, their_period)
         fiolength = @employee.fio + " salary to pay"
         @chartslim = Chart.where("users_id = ? and content = ?", current_user.id,fiolength)
         @trantax.users_id = current_user.id
+        @trantax.code = @chartslim.first.code + stepcode
         @trantax.chart_clones_id = @trantax.code/10000
         @trantax.date = DateTime.now
         @trantax.gsttype = 0
@@ -52,7 +56,7 @@ def create_future_trans(their_amount, their_period)
         # byebug
         case _tc
          
-          when 1
+          when "1"
 
             @_flim = @firstLimit.to_f / 52
             @_slim = @secondLimit.to_f / 52
@@ -61,7 +65,7 @@ def create_future_trans(their_amount, their_period)
             @_stax = @secondTax.to_f / 52
             @_ttax = @thirdTax.to_f / 52
             @_stllim = @studentLoan.to_f / 52
-          when 2
+          when "2"
             @_flim = @firstLimit.to_f / 26
             @_slim = @secondLimit.to_f / 26
             @_tlim = @thirdLimit.to_f / 26
@@ -69,7 +73,7 @@ def create_future_trans(their_amount, their_period)
             @_stax = @secondTax.to_f / 26
             @_ttax = @thirdTax.to_f / 26
             @_stllim = @studentLoan.to_f / 26
-          when 3
+          when "3"
             @_flim = @firstLimit.to_f / 12
             @_slim = @secondLimit.to_f / 12
             @_tlim = @thirdLimit.to_f / 12 
