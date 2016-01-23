@@ -2,3 +2,9 @@
 
 %p
   = link_to 'Export/Import_new:', :controller => "exp_imps", :action => "new"
+  %br
+  = link_to 'Users:', :controller => "exp_imps", :action => "index" 
+  = User.all.count  
+  %br
+  = link_to 'Charts:', :controller => "charts", :action => "indexfull"
+  = Chart.all.count

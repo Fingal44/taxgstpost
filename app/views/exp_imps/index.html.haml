@@ -1,9 +1,19 @@
-.container
-  .row
-    %h3 Users_0
-    .column
-      %table.table
-        %tbody
-          - @users.each do |user|
-            %tr
-              = render user
+%h1= t('Listing Users')
+%table
+  %tbody
+    %tr
+      %th ID
+      %th Name
+      %th E-mail
+      %th Category
+      %th Expire_Date
+      %th
+      %th
+      %th 
+    - @users.each do |user| 
+      %tr
+        %td= user.id
+        %td= user.name
+        %td=user.email
+        %td=user.category
+        %td=user.expire_date

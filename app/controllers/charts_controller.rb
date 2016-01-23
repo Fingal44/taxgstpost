@@ -20,7 +20,21 @@ class ChartsController < ApplicationController
       format.json { render json: @charts }
     end
   end
+ 
+  def indexfull
+    #cu=current_user.id
+    if current_user == nil  
+      @charts = Chart.where("users_id = 0").order("code")
+    else
+      @charts = Chart.all.order("users_id","code")
+    end
 
+    respond_to do |format|
+     # format.html # index.html.erb
+      format.html # index.html.haml
+      format.json { render json: @charts }
+    end
+  end
   # GET /charts/1
   # GET /charts/1.json
   def show

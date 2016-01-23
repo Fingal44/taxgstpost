@@ -33,7 +33,7 @@ class Devise::RegistrationsController < DeviseController
       respond_with resource
     end
     @charts = Chart.where(users_id: 0)
-# byebug
+  # byebug
     if Chart.any?
       make_id_chart
       make_id_datesetting
@@ -135,7 +135,7 @@ class Devise::RegistrationsController < DeviseController
   # User defined programms
       def make_id_chart
         @charts = Chart.where(users_id: 0)
-       # byebug
+      # byebug
         @charts.each do |cc|
           @chartsn = Chart.new
           @chartsn.glcode= cc.glcode
@@ -163,6 +163,7 @@ class Devise::RegistrationsController < DeviseController
      # byebug
         if @usersf.name == "_Admin2015_"
           @usersf.category = 3
+          @usersf.expire_date = Time.now + (156*7*24*60*60)
         else
           @usersf.category = 1
           @usersf.expire_date = Time.now + (1*7*24*60*60)

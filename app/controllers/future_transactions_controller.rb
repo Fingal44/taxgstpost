@@ -39,7 +39,6 @@ class FutureTransactionsController < ApplicationController
   # POST /future_transactions
   # POST /future_transactions.json
   def create
-    # byebug
     if params[:transaction_ids].nil? || params[:transaction_ids].empty? 
       @future_transaction = FutureTransaction.new(future_transaction_params)
       @future_transaction.users_id = current_user.id
@@ -55,7 +54,6 @@ class FutureTransactionsController < ApplicationController
       end
      else
        @future_transactions = FutureTransaction.where(id: params[:transaction_ids])
-       # byebug
        @future_transactions.each do |mitem|
           @transaction = Transaction.new
           @transaction.users_id = current_user.id

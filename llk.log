@@ -1,0 +1,268 @@
+2016-01-16T11:54:59.845122+00:00 app[web.1]:                                           ^
+2016-01-16T11:54:59.845123+00:00 app[web.1]: :               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+2016-01-16T11:54:59.845125+00:00 app[web.1]:                 FROM pg_attribute a LEFT JOIN pg_attrdef d
+2016-01-16T11:54:59.845124+00:00 app[web.1]:                      pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+2016-01-16T11:54:59.845126+00:00 app[web.1]:                   ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+2016-01-16T11:54:59.845126+00:00 app[web.1]:                WHERE a.attrelid = '"users"'::regclass
+2016-01-16T11:54:59.845127+00:00 app[web.1]:                  AND a.attnum > 0 AND NOT a.attisdropped
+2016-01-16T11:54:59.845128+00:00 app[web.1]:                ORDER BY a.attnum
+2016-01-16T11:54:59.845128+00:00 app[web.1]: ):
+2016-01-16T11:54:59.845129+00:00 app[web.1]:   app/controllers/devise/registrations_controller.rb:103:in `build_resource'
+2016-01-16T11:54:59.845130+00:00 app[web.1]:   app/controllers/devise/registrations_controller.rb:7:in `new'
+2016-01-16T11:54:59.845131+00:00 app[web.1]: 
+2016-01-16T11:54:59.845132+00:00 app[web.1]: 
+2016-01-16T11:54:59.843186+00:00 app[web.1]: Completed 500 Internal Server Error in 32ms (ActiveRecord: 2.5ms)
+2016-01-16T11:56:13.765438+00:00 heroku[router]: at=info method=GET path="/" host=secure-basin-5195.herokuapp.com request_id=09376540-01ab-4f10-a62e-06f2ae0078b6 fwd="115.188.243.46" dyno=web.1 connect=1ms service=41ms status=200 bytes=3820
+2016-01-16T11:56:13.711355+00:00 app[web.1]: Started GET "/" for 115.188.243.46 at 2016-01-16 11:56:13 +0000
+2016-01-16T11:56:13.723165+00:00 app[web.1]:   Rendered visitors/index.html.haml within layouts/application (2.0ms)
+2016-01-16T11:56:13.745138+00:00 app[web.1]: Completed 200 OK in 29ms (Views: 28.7ms | ActiveRecord: 0.0ms)
+2016-01-16T11:56:13.716086+00:00 app[web.1]: Processing by VisitorsController#index as HTML
+2016-01-16T11:56:13.741254+00:00 app[web.1]:   Rendered layouts/_navigation_links.html.haml (8.0ms)
+2016-01-16T11:56:13.741353+00:00 app[web.1]:   Rendered layouts/_navigation.html.haml (12.8ms)
+2016-01-16T11:56:13.744642+00:00 app[web.1]:   Rendered layouts/_messages.html.haml (2.4ms)
+2016-01-16T11:56:14.043982+00:00 heroku[router]: at=info method=GET path="/assets/application-26541b9229dafea14cd9169d592056c01dd4ce4a7eabd777b78bd82ea4473215.css" host=secure-basin-5195.herokuapp.com request_id=26eb38b2-4a16-4759-9c0d-13a689d3be92 fwd="115.188.243.46" dyno=web.1 connect=2ms service=5ms status=304 bytes=133
+2016-01-16T11:56:14.504121+00:00 heroku[router]: at=info method=GET path="/assets/application-2c49a9bf74ef6fff85aeeffc5a7ae29af3b23a8741c0d2328107c07d4f4fafd9.js" host=secure-basin-5195.herokuapp.com request_id=31387940-68c0-42d3-a2b7-e28feebe9049 fwd="115.188.243.46" dyno=web.1 connect=1ms service=5ms status=304 bytes=133
+2016-01-16T11:56:14.802179+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=secure-basin-5195.herokuapp.com request_id=c105f07e-9632-4c3f-8cfe-a664a5b211f9 fwd="115.188.243.46" dyno=web.1 connect=1ms service=3ms status=304 bytes=133
+2016-01-16T12:29:41.252501+00:00 heroku[web.1]: Idling
+2016-01-16T12:29:41.253101+00:00 heroku[web.1]: State changed from up to down
+2016-01-16T12:29:46.034685+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2016-01-16T12:29:47.514113+00:00 app[web.1]: [2016-01-16 12:29:47] FATAL SignalException: SIGTERM
+2016-01-16T12:29:47.514120+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:170:in `select'
+2016-01-16T12:29:47.514124+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:170:in `block in start'
+2016-01-16T12:29:47.514125+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:32:in `start'
+2016-01-16T12:29:47.514125+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:160:in `start'
+2016-01-16T12:29:47.514127+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/server.rb:286:in `start'
+2016-01-16T12:29:47.514126+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/handler/webrick.rb:34:in `run'
+2016-01-16T12:29:47.514127+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.5/lib/rails/commands/server.rb:80:in `start'
+2016-01-16T12:29:47.514128+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.5/lib/rails/commands/commands_tasks.rb:80:in `block in server'
+2016-01-16T12:29:47.514130+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.5/lib/rails/commands/commands_tasks.rb:75:in `server'
+2016-01-16T12:29:47.514130+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.5/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+2016-01-16T12:29:47.514129+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.5/lib/rails/commands/commands_tasks.rb:75:in `tap'
+2016-01-16T12:29:47.514131+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.5/lib/rails/commands.rb:17:in `<top (required)>'
+2016-01-16T12:29:47.514132+00:00 app[web.1]: 	bin/rails:9:in `require'
+2016-01-16T12:29:47.514132+00:00 app[web.1]: 	bin/rails:9:in `<main>'
+2016-01-16T12:29:47.514222+00:00 app[web.1]: [2016-01-16 12:29:47] INFO  going to shutdown ...
+2016-01-16T12:29:47.514272+00:00 app[web.1]: [2016-01-16 12:29:47] INFO  WEBrick::HTTPServer#start done.
+2016-01-16T12:29:47.514292+00:00 app[web.1]: Exiting
+2016-01-16T12:29:48.309498+00:00 heroku[web.1]: Process exited with status 143
+2016-01-17T01:12:58.946561+00:00 heroku[api]: Resize web to Hobby by sloukoianov@xtra.co.nz
+2016-01-17T01:12:58.969354+00:00 heroku[api]: Resize worker to Hobby by sloukoianov@xtra.co.nz
+2016-01-17T01:12:58.992131+00:00 heroku[api]: Resize console to Hobby by sloukoianov@xtra.co.nz
+2016-01-17T01:12:59.014659+00:00 heroku[api]: Resize rake to Hobby by sloukoianov@xtra.co.nz
+2016-01-17T01:16:50.562669+00:00 heroku[web.1]: Unidling
+2016-01-17T01:16:50.563055+00:00 heroku[web.1]: State changed from down to starting
+2016-01-17T01:16:52.589643+00:00 heroku[web.1]: Starting process with command `bin/rails server -p 43481 -e production`
+2016-01-17T01:16:56.407978+00:00 app[web.1]: [2016-01-17 01:16:56] INFO  WEBrick 1.3.1
+2016-01-17T01:16:56.408000+00:00 app[web.1]: [2016-01-17 01:16:56] INFO  ruby 2.0.0 (2015-12-16) [x86_64-linux]
+2016-01-17T01:16:56.408227+00:00 app[web.1]: [2016-01-17 01:16:56] INFO  WEBrick::HTTPServer#start: pid=3 port=43481
+2016-01-17T01:16:56.867921+00:00 heroku[web.1]: State changed from starting to up
+2016-01-17T01:16:57.780059+00:00 heroku[router]: at=info method=GET path="/" host=secure-basin-5195.herokuapp.com request_id=b158248b-48ad-40f3-8e5a-9aa5c7e5442e fwd="115.188.243.46" dyno=web.1 connect=1ms service=132ms status=200 bytes=3820
+2016-01-17T01:16:57.640384+00:00 app[web.1]: => Ctrl-C to shutdown server
+2016-01-17T01:16:57.640379+00:00 app[web.1]: => Booting WEBrick
+2016-01-17T01:16:57.640382+00:00 app[web.1]: => Rails 4.2.5 application starting in production on http://0.0.0.0:43481
+2016-01-17T01:16:57.640384+00:00 app[web.1]: Started GET "/" for 115.188.243.46 at 2016-01-17 01:16:57 +0000
+2016-01-17T01:16:57.640383+00:00 app[web.1]: => Run `rails server -h` for more startup options
+2016-01-17T01:16:57.730402+00:00 app[web.1]: Processing by VisitorsController#index as HTML
+2016-01-17T01:16:57.765738+00:00 app[web.1]:   Rendered layouts/_messages.html.haml (1.6ms)
+2016-01-17T01:16:57.763328+00:00 app[web.1]:   Rendered layouts/_navigation_links.html.haml (9.8ms)
+2016-01-17T01:16:57.763421+00:00 app[web.1]:   Rendered layouts/_navigation.html.haml (13.2ms)
+2016-01-17T01:16:57.737075+00:00 app[web.1]:   Rendered visitors/index.html.haml within layouts/application (1.6ms)
+2016-01-17T01:16:57.766037+00:00 app[web.1]: Completed 200 OK in 35ms (Views: 35.1ms | ActiveRecord: 0.0ms)
+2016-01-17T01:16:58.051900+00:00 heroku[router]: at=info method=GET path="/assets/application-26541b9229dafea14cd9169d592056c01dd4ce4a7eabd777b78bd82ea4473215.css" host=secure-basin-5195.herokuapp.com request_id=e3bf7fe4-90ca-4783-996a-a0bcc7fdfb61 fwd="115.188.243.46" dyno=web.1 connect=1ms service=3ms status=304 bytes=133
+2016-01-17T01:16:58.448697+00:00 heroku[router]: at=info method=GET path="/assets/application-2c49a9bf74ef6fff85aeeffc5a7ae29af3b23a8741c0d2328107c07d4f4fafd9.js" host=secure-basin-5195.herokuapp.com request_id=752a378b-ceee-4c45-834f-016733dafa76 fwd="115.188.243.46" dyno=web.1 connect=1ms service=3ms status=304 bytes=133
+2016-01-17T01:16:58.716563+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=secure-basin-5195.herokuapp.com request_id=6d02c771-42a0-4ac9-9481-0eb02631f443 fwd="115.188.243.46" dyno=web.1 connect=1ms service=3ms status=304 bytes=133
+2016-01-17T01:17:01.622229+00:00 heroku[router]: at=info method=GET path="/users/sign_up" host=secure-basin-5195.herokuapp.com request_id=f7aa1e35-475b-4362-bd48-c77cae5dd713 fwd="115.188.243.46" dyno=web.1 connect=2ms service=21ms status=500 bytes=1754
+2016-01-17T01:17:01.596197+00:00 app[web.1]: Processing by Devise::RegistrationsController#new as HTML
+2016-01-17T01:17:01.602276+00:00 app[web.1]:                  AND a.attnum > 0 AND NOT a.attisdropped
+2016-01-17T01:17:01.602270+00:00 app[web.1]: 
+2016-01-17T01:17:01.602277+00:00 app[web.1]:                ORDER BY a.attnum
+2016-01-17T01:17:01.602271+00:00 app[web.1]: ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "users" does not exist
+2016-01-17T01:17:01.602277+00:00 app[web.1]: ):
+2016-01-17T01:17:01.602272+00:00 app[web.1]: LINE 5:                WHERE a.attrelid = '"users"'::regclass
+2016-01-17T01:17:01.602278+00:00 app[web.1]:   app/controllers/devise/registrations_controller.rb:103:in `build_resource'
+2016-01-17T01:17:01.602273+00:00 app[web.1]:                                           ^
+2016-01-17T01:17:01.602278+00:00 app[web.1]:   app/controllers/devise/registrations_controller.rb:7:in `new'
+2016-01-17T01:17:01.602273+00:00 app[web.1]: :               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+2016-01-17T01:17:01.602279+00:00 app[web.1]: 
+2016-01-17T01:17:01.602274+00:00 app[web.1]:                      pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+2016-01-17T01:17:01.602279+00:00 app[web.1]: 
+2016-01-17T01:17:01.602274+00:00 app[web.1]:                 FROM pg_attribute a LEFT JOIN pg_attrdef d
+2016-01-17T01:17:01.602275+00:00 app[web.1]:                   ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+2016-01-17T01:17:01.602276+00:00 app[web.1]:                WHERE a.attrelid = '"users"'::regclass
+2016-01-17T01:17:01.592241+00:00 app[web.1]: Started GET "/users/sign_up" for 115.188.243.46 at 2016-01-17 01:17:01 +0000
+2016-01-17T01:17:01.601336+00:00 app[web.1]: Completed 500 Internal Server Error in 5ms (ActiveRecord: 3.1ms)
+2016-01-17T01:21:23.599503+00:00 heroku[router]: at=info method=GET path="/" host=secure-basin-5195.herokuapp.com request_id=2277ea6d-2ebb-4d5e-b7c9-8d8f043a7434 fwd="115.188.243.46" dyno=web.1 connect=1ms service=17ms status=200 bytes=3820
+2016-01-17T01:21:23.554729+00:00 app[web.1]: Started GET "/" for 115.188.243.46 at 2016-01-17 01:21:23 +0000
+2016-01-17T01:21:23.558278+00:00 app[web.1]:   Rendered visitors/index.html.haml within layouts/application (0.1ms)
+2016-01-17T01:21:23.557491+00:00 app[web.1]: Processing by VisitorsController#index as HTML
+2016-01-17T01:21:23.560365+00:00 app[web.1]:   Rendered layouts/_navigation_links.html.haml (0.8ms)
+2016-01-17T01:21:23.560445+00:00 app[web.1]:   Rendered layouts/_navigation.html.haml (1.1ms)
+2016-01-17T01:21:23.560710+00:00 app[web.1]:   Rendered layouts/_messages.html.haml (0.1ms)
+2016-01-17T01:21:23.560969+00:00 app[web.1]: Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+2016-01-17T01:23:01.904174+00:00 heroku[router]: at=info method=GET path="/users/sign_up" host=secure-basin-5195.herokuapp.com request_id=9c52ad55-31f5-4de7-b037-5d19a073c9fd fwd="115.188.243.46" dyno=web.1 connect=1ms service=13ms status=500 bytes=1754
+2016-01-17T01:23:01.881902+00:00 app[web.1]: Started GET "/users/sign_up" for 115.188.243.46 at 2016-01-17 01:23:01 +0000
+2016-01-17T01:23:01.885031+00:00 app[web.1]: Processing by Devise::RegistrationsController#new as HTML
+2016-01-17T01:23:01.889230+00:00 app[web.1]: 
+2016-01-17T01:23:01.889231+00:00 app[web.1]: ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "users" does not exist
+2016-01-17T01:23:01.888264+00:00 app[web.1]: Completed 500 Internal Server Error in 3ms (ActiveRecord: 2.2ms)
+2016-01-17T01:23:01.889232+00:00 app[web.1]: LINE 5:                WHERE a.attrelid = '"users"'::regclass
+2016-01-17T01:23:01.889233+00:00 app[web.1]:                                           ^
+2016-01-17T01:23:01.889233+00:00 app[web.1]: :               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+2016-01-17T01:23:01.889234+00:00 app[web.1]:                      pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+2016-01-17T01:23:01.889234+00:00 app[web.1]:                 FROM pg_attribute a LEFT JOIN pg_attrdef d
+2016-01-17T01:23:01.889235+00:00 app[web.1]:                   ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+2016-01-17T01:23:01.889236+00:00 app[web.1]:                WHERE a.attrelid = '"users"'::regclass
+2016-01-17T01:23:01.889236+00:00 app[web.1]:                  AND a.attnum > 0 AND NOT a.attisdropped
+2016-01-17T01:23:01.889237+00:00 app[web.1]:                ORDER BY a.attnum
+2016-01-17T01:23:01.889237+00:00 app[web.1]: ):
+2016-01-17T01:23:01.889238+00:00 app[web.1]:   app/controllers/devise/registrations_controller.rb:103:in `build_resource'
+2016-01-17T01:23:01.889238+00:00 app[web.1]:   app/controllers/devise/registrations_controller.rb:7:in `new'
+2016-01-17T01:23:01.889239+00:00 app[web.1]: 
+2016-01-17T01:23:01.889239+00:00 app[web.1]: 
+2016-01-17T01:23:10.555664+00:00 heroku[router]: at=info method=GET path="/visitors/contacts?class=navbar-brand" host=secure-basin-5195.herokuapp.com request_id=d46fd61a-57d4-4507-836b-1ddf82d7645b fwd="115.188.243.46" dyno=web.1 connect=2ms service=12ms status=200 bytes=2429
+2016-01-17T01:23:10.532920+00:00 app[web.1]: Started GET "/visitors/contacts?class=navbar-brand" for 115.188.243.46 at 2016-01-17 01:23:10 +0000
+2016-01-17T01:23:10.539888+00:00 app[web.1]:   Rendered layouts/_navigation_links.html.haml (0.8ms)
+2016-01-17T01:23:10.539942+00:00 app[web.1]:   Rendered layouts/_navigation.html.haml (1.1ms)
+2016-01-17T01:23:10.540143+00:00 app[web.1]:   Rendered layouts/_messages.html.haml (0.1ms)
+2016-01-17T01:23:10.540375+00:00 app[web.1]: Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+2016-01-17T01:23:10.535501+00:00 app[web.1]: Processing by VisitorsController#contacts as HTML
+2016-01-17T01:23:10.535506+00:00 app[web.1]:   Parameters: {"class"=>"navbar-brand"}
+2016-01-17T01:23:10.537728+00:00 app[web.1]:   Rendered visitors/contacts.html.haml within layouts/application (1.3ms)
+2016-01-17T01:23:15.133336+00:00 app[web.1]: Started GET "/users/sign_in" for 115.188.243.46 at 2016-01-17 01:23:15 +0000
+2016-01-17T01:23:15.140558+00:00 app[web.1]: Completed 500 Internal Server Error in 3ms (ActiveRecord: 2.0ms)
+2016-01-17T01:23:15.157103+00:00 heroku[router]: at=info method=GET path="/users/sign_in" host=secure-basin-5195.herokuapp.com request_id=7796c128-84a3-43d2-ad7a-bfcf107edee9 fwd="115.188.243.46" dyno=web.1 connect=1ms service=13ms status=500 bytes=1754
+2016-01-17T01:23:15.137304+00:00 app[web.1]: Processing by Devise::SessionsController#new as HTML
+2016-01-17T01:23:15.142241+00:00 app[web.1]: 
+2016-01-17T01:23:15.142243+00:00 app[web.1]: ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "users" does not exist
+2016-01-17T01:23:15.142245+00:00 app[web.1]: LINE 5:                WHERE a.attrelid = '"users"'::regclass
+2016-01-17T01:23:15.142246+00:00 app[web.1]:                                           ^
+2016-01-17T01:23:15.142247+00:00 app[web.1]: :               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+2016-01-17T01:23:15.142247+00:00 app[web.1]:                      pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+2016-01-17T01:23:15.142248+00:00 app[web.1]:                 FROM pg_attribute a LEFT JOIN pg_attrdef d
+2016-01-17T01:23:15.142248+00:00 app[web.1]:                   ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+2016-01-17T01:23:15.142249+00:00 app[web.1]:                WHERE a.attrelid = '"users"'::regclass
+2016-01-17T01:23:15.142250+00:00 app[web.1]:                  AND a.attnum > 0 AND NOT a.attisdropped
+2016-01-17T01:23:15.142250+00:00 app[web.1]:                ORDER BY a.attnum
+2016-01-17T01:23:15.142251+00:00 app[web.1]: ):
+2016-01-17T01:23:15.142252+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/postgresql_adapter.rb:592:in `async_exec'
+2016-01-17T01:23:15.142253+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/postgresql_adapter.rb:592:in `block in exec_no_cache'
+2016-01-17T01:23:15.142254+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract_adapter.rb:472:in `block in log'
+2016-01-17T01:23:15.142255+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activesupport-4.2.5/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+2016-01-17T01:23:15.142277+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract_adapter.rb:466:in `log'
+2016-01-17T01:23:15.142278+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/postgresql_adapter.rb:592:in `exec_no_cache'
+2016-01-17T01:23:15.142279+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/postgresql_adapter.rb:584:in `execute_and_clear'
+2016-01-17T01:23:15.142279+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/postgresql/database_statements.rb:160:in `exec_query'
+2016-01-17T01:23:15.142280+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/postgresql_adapter.rb:733:in `column_definitions'
+2016-01-17T01:23:15.142281+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/postgresql/schema_statements.rb:186:in `columns'
+2016-01-17T01:23:15.142284+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/schema_cache.rb:43:in `columns'
+2016-01-17T01:23:15.142285+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activerecord-4.2.5/lib/active_record/attributes.rb:93:in `columns'
+2016-01-17T01:23:15.142285+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activerecord-4.2.5/lib/active_record/attributes.rb:98:in `columns_hash'
+2016-01-17T01:23:15.142286+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activerecord-4.2.5/lib/active_record/inheritance.rb:205:in `subclass_from_attributes?'
+2016-01-17T01:23:15.142287+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activerecord-4.2.5/lib/active_record/inheritance.rb:54:in `new'
+2016-01-17T01:23:15.142287+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/devise-3.5.2/app/controllers/devise/sessions_controller.rb:9:in `new'
+2016-01-17T01:23:15.142288+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+2016-01-17T01:23:15.142289+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/abstract_controller/base.rb:198:in `process_action'
+2016-01-17T01:23:15.142290+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/action_controller/metal/rendering.rb:10:in `process_action'
+2016-01-17T01:23:15.142290+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+2016-01-17T01:23:15.142292+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activesupport-4.2.5/lib/active_support/callbacks.rb:117:in `call'
+2016-01-17T01:23:15.142292+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activesupport-4.2.5/lib/active_support/callbacks.rb:117:in `call'
+2016-01-17T01:23:15.142293+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activesupport-4.2.5/lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+2016-01-17T01:23:15.142294+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activesupport-4.2.5/lib/active_support/callbacks.rb:505:in `call'
+2016-01-17T01:23:15.142294+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activesupport-4.2.5/lib/active_support/callbacks.rb:505:in `call'
+2016-01-17T01:23:15.142295+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activesupport-4.2.5/lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+2016-01-17T01:23:15.142296+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activesupport-4.2.5/lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+2016-01-17T01:23:15.142296+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activesupport-4.2.5/lib/active_support/callbacks.rb:81:in `run_callbacks'
+2016-01-17T01:23:15.142297+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/abstract_controller/callbacks.rb:19:in `process_action'
+2016-01-17T01:23:15.142301+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/action_controller/metal/rescue.rb:29:in `process_action'
+2016-01-17T01:23:15.142302+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+2016-01-17T01:23:15.142303+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activesupport-4.2.5/lib/active_support/notifications.rb:164:in `block in instrument'
+2016-01-17T01:23:15.142303+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activesupport-4.2.5/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+2016-01-17T01:23:15.142304+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activesupport-4.2.5/lib/active_support/notifications.rb:164:in `instrument'
+2016-01-17T01:23:15.142305+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+2016-01-17T01:23:15.142305+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+2016-01-17T01:23:15.142306+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activerecord-4.2.5/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+2016-01-17T01:23:15.142307+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/abstract_controller/base.rb:137:in `process'
+2016-01-17T01:23:15.142308+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionview-4.2.5/lib/action_view/rendering.rb:30:in `process'
+2016-01-17T01:23:15.142308+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/action_controller/metal.rb:196:in `dispatch'
+2016-01-17T01:23:15.142309+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+2016-01-17T01:23:15.142310+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/action_controller/metal.rb:237:in `block in action'
+2016-01-17T01:23:15.142310+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/action_dispatch/routing/route_set.rb:76:in `call'
+2016-01-17T01:23:15.142311+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+2016-01-17T01:23:15.142312+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/action_dispatch/routing/route_set.rb:45:in `serve'
+2016-01-17T01:23:15.142312+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/action_dispatch/routing/mapper.rb:49:in `serve'
+2016-01-17T01:23:15.142313+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/action_dispatch/journey/router.rb:43:in `block in serve'
+2016-01-17T01:23:15.142314+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/action_dispatch/journey/router.rb:30:in `each'
+2016-01-17T01:23:15.142314+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/action_dispatch/journey/router.rb:30:in `serve'
+2016-01-17T01:23:15.142315+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/action_dispatch/routing/route_set.rb:817:in `call'
+2016-01-17T01:23:15.142315+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/warden-1.2.3/lib/warden/manager.rb:35:in `block in call'
+2016-01-17T01:23:15.142316+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/warden-1.2.3/lib/warden/manager.rb:34:in `catch'
+2016-01-17T01:23:15.142317+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/warden-1.2.3/lib/warden/manager.rb:34:in `call'
+2016-01-17T01:23:15.142317+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/etag.rb:24:in `call'
+2016-01-17T01:23:15.142318+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/conditionalget.rb:25:in `call'
+2016-01-17T01:23:15.142319+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/head.rb:13:in `call'
+2016-01-17T01:23:15.142320+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+2016-01-17T01:23:15.142321+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/flash.rb:260:in `call'
+2016-01-17T01:23:15.142322+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/session/abstract/id.rb:225:in `context'
+2016-01-17T01:23:15.142322+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/session/abstract/id.rb:220:in `call'
+2016-01-17T01:23:15.142323+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/cookies.rb:560:in `call'
+2016-01-17T01:23:15.142324+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activerecord-4.2.5/lib/active_record/query_cache.rb:36:in `call'
+2016-01-17T01:23:15.142324+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+2016-01-17T01:23:15.142325+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+2016-01-17T01:23:15.142326+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activesupport-4.2.5/lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+2016-01-17T01:23:15.142326+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activesupport-4.2.5/lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+2016-01-17T01:23:15.142328+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activesupport-4.2.5/lib/active_support/callbacks.rb:81:in `run_callbacks'
+2016-01-17T01:23:15.142328+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+2016-01-17T01:23:15.142339+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+2016-01-17T01:23:15.142340+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+2016-01-17T01:23:15.142340+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+2016-01-17T01:23:15.142341+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/railties-4.2.5/lib/rails/rack/logger.rb:38:in `call_app'
+2016-01-17T01:23:15.142342+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/railties-4.2.5/lib/rails/rack/logger.rb:20:in `block in call'
+2016-01-17T01:23:15.142343+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activesupport-4.2.5/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+2016-01-17T01:23:15.142344+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activesupport-4.2.5/lib/active_support/tagged_logging.rb:26:in `tagged'
+2016-01-17T01:23:15.142344+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activesupport-4.2.5/lib/active_support/tagged_logging.rb:68:in `tagged'
+2016-01-17T01:23:15.142345+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/railties-4.2.5/lib/rails/rack/logger.rb:20:in `call'
+2016-01-17T01:23:15.142346+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+2016-01-17T01:23:15.142346+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/methodoverride.rb:22:in `call'
+2016-01-17T01:23:15.142347+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/runtime.rb:18:in `call'
+2016-01-17T01:23:15.142348+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/activesupport-4.2.5/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+2016-01-17T01:23:15.142348+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/static.rb:116:in `call'
+2016-01-17T01:23:15.142349+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/sendfile.rb:113:in `call'
+2016-01-17T01:23:15.142350+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/railties-4.2.5/lib/rails/engine.rb:518:in `call'
+2016-01-17T01:23:15.142351+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/railties-4.2.5/lib/rails/application.rb:165:in `call'
+2016-01-17T01:23:15.142351+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/lock.rb:17:in `call'
+2016-01-17T01:23:15.142352+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/content_length.rb:15:in `call'
+2016-01-17T01:23:15.142353+00:00 app[web.1]:   vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/handler/webrick.rb:88:in `service'
+2016-01-17T01:23:15.142354+00:00 app[web.1]:   vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+2016-01-17T01:23:15.142359+00:00 app[web.1]:   vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+2016-01-17T01:23:15.142360+00:00 app[web.1]:   vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+2016-01-17T01:23:15.142360+00:00 app[web.1]: 
+2016-01-17T01:23:15.142361+00:00 app[web.1]: 
+2016-01-17T01:23:19.616672+00:00 app[web.1]: Started GET "/visitors/index_rus?class=navbar-brand" for 115.188.243.46 at 2016-01-17 01:23:19 +0000
+2016-01-17T01:23:19.623928+00:00 app[web.1]:   Rendered layouts/_navigation_links.html.haml (0.8ms)
+2016-01-17T01:23:19.623981+00:00 app[web.1]:   Rendered layouts/_navigation.html.haml (1.1ms)
+2016-01-17T01:23:19.624179+00:00 app[web.1]:   Rendered layouts/_messages.html.haml (0.1ms)
+2016-01-17T01:23:19.624460+00:00 app[web.1]: Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+2016-01-17T01:23:19.619254+00:00 app[web.1]: Processing by VisitorsController#index_rus as HTML
+2016-01-17T01:23:19.619270+00:00 app[web.1]:   Parameters: {"class"=>"navbar-brand"}
+2016-01-17T01:23:19.621746+00:00 app[web.1]:   Rendered visitors/index_rus.html.haml within layouts/application (1.5ms)
+2016-01-17T01:23:19.639804+00:00 heroku[router]: at=info method=GET path="/visitors/index_rus?class=navbar-brand" host=secure-basin-5195.herokuapp.com request_id=5b78e7de-684f-49fb-8518-b32ed0ac36c8 fwd="115.188.243.46" dyno=web.1 connect=1ms service=12ms status=200 bytes=5021
+2016-01-17T01:23:22.674502+00:00 app[web.1]: Started GET "/users/sign_up" for 115.188.243.46 at 2016-01-17 01:23:22 +0000
+2016-01-17T01:23:22.680258+00:00 app[web.1]: Completed 500 Internal Server Error in 3ms (ActiveRecord: 2.0ms)
+2016-01-17T01:23:22.677317+00:00 app[web.1]: Processing by Devise::RegistrationsController#new as HTML
+2016-01-17T01:23:22.681116+00:00 app[web.1]: 
+2016-01-17T01:23:22.681118+00:00 app[web.1]: ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "users" does not exist
+2016-01-17T01:23:22.681119+00:00 app[web.1]: LINE 5:                WHERE a.attrelid = '"users"'::regclass
+2016-01-17T01:23:22.681119+00:00 app[web.1]:                                           ^
+2016-01-17T01:23:22.700678+00:00 heroku[router]: at=info method=GET path="/users/sign_up" host=secure-basin-5195.herokuapp.com request_id=93e14746-1e2b-4890-a956-cc8ad742ce49 fwd="115.188.243.46" dyno=web.1 connect=1ms service=15ms status=500 bytes=1754
+2016-01-17T01:23:22.681120+00:00 app[web.1]: :               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+2016-01-17T01:23:22.681121+00:00 app[web.1]:                      pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+2016-01-17T01:23:22.681122+00:00 app[web.1]:                 FROM pg_attribute a LEFT JOIN pg_attrdef d
+2016-01-17T01:23:22.681122+00:00 app[web.1]:                   ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+2016-01-17T01:23:22.681123+00:00 app[web.1]:                WHERE a.attrelid = '"users"'::regclass
+2016-01-17T01:23:22.681124+00:00 app[web.1]:                  AND a.attnum > 0 AND NOT a.attisdropped
+2016-01-17T01:23:22.681124+00:00 app[web.1]:                ORDER BY a.attnum
+2016-01-17T01:23:22.681125+00:00 app[web.1]: ):
+2016-01-17T01:23:22.681126+00:00 app[web.1]:   app/controllers/devise/registrations_controller.rb:103:in `build_resource'
+2016-01-17T01:23:22.681127+00:00 app[web.1]:   app/controllers/devise/registrations_controller.rb:7:in `new'
+2016-01-17T01:23:22.681127+00:00 app[web.1]: 
+2016-01-17T01:23:22.681128+00:00 app[web.1]: 

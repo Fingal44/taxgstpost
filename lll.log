@@ -1,0 +1,202 @@
+2016-01-16T10:59:39.551752+00:00 app[web.1]:                  AND a.attnum > 0 AND NOT a.attisdropped
+2016-01-16T10:59:39.551747+00:00 app[web.1]: LINE 5:                WHERE a.attrelid = '"users"'::regclass
+2016-01-16T10:59:39.551747+00:00 app[web.1]:                                           ^
+2016-01-16T10:59:39.551760+00:00 app[web.1]: ):
+2016-01-16T10:59:39.551749+00:00 app[web.1]: :               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+2016-01-16T10:59:39.551761+00:00 app[web.1]:   app/controllers/devise/registrations_controller.rb:103:in `build_resource'
+2016-01-16T10:59:39.551749+00:00 app[web.1]:                      pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+2016-01-16T10:59:39.551751+00:00 app[web.1]:                   ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+2016-01-16T10:59:39.551762+00:00 app[web.1]: 
+2016-01-16T10:59:39.551750+00:00 app[web.1]:                 FROM pg_attribute a LEFT JOIN pg_attrdef d
+2016-01-16T10:59:39.551761+00:00 app[web.1]:   app/controllers/devise/registrations_controller.rb:7:in `new'
+2016-01-16T10:59:39.551751+00:00 app[web.1]:                WHERE a.attrelid = '"users"'::regclass
+2016-01-16T10:59:39.551762+00:00 app[web.1]: 
+2016-01-16T10:59:39.542882+00:00 app[web.1]: Completed 500 Internal Server Error in 5ms (ActiveRecord: 2.4ms)
+2016-01-16T10:59:39.533256+00:00 app[web.1]: Started GET "/users/sign_up" for 115.188.243.46 at 2016-01-16 10:59:39 +0000
+2016-01-16T11:35:11.247358+00:00 heroku[web.1]: Idling
+2016-01-16T11:35:11.248072+00:00 heroku[web.1]: State changed from up to down
+2016-01-16T11:35:16.648051+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2016-01-16T11:35:18.348001+00:00 app[web.1]: [2016-01-16 11:35:18] FATAL SignalException: SIGTERM
+2016-01-16T11:35:18.348007+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:170:in `block in start'
+2016-01-16T11:35:18.348005+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:170:in `select'
+2016-01-16T11:35:18.348008+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:32:in `start'
+2016-01-16T11:35:18.348012+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.5/lib/rails/commands/commands_tasks.rb:80:in `block in server'
+2016-01-16T11:35:18.348008+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:160:in `start'
+2016-01-16T11:35:18.348009+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/handler/webrick.rb:34:in `run'
+2016-01-16T11:35:18.348011+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.5/lib/rails/commands/server.rb:80:in `start'
+2016-01-16T11:35:18.348013+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.5/lib/rails/commands/commands_tasks.rb:75:in `tap'
+2016-01-16T11:35:18.348013+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.5/lib/rails/commands/commands_tasks.rb:75:in `server'
+2016-01-16T11:35:18.348015+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.5/lib/rails/commands.rb:17:in `<top (required)>'
+2016-01-16T11:35:18.348014+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.5/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+2016-01-16T11:35:18.348010+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/server.rb:286:in `start'
+2016-01-16T11:35:18.348016+00:00 app[web.1]: 	bin/rails:9:in `require'
+2016-01-16T11:35:18.348259+00:00 app[web.1]: [2016-01-16 11:35:18] INFO  WEBrick::HTTPServer#start done.
+2016-01-16T11:35:18.348016+00:00 app[web.1]: 	bin/rails:9:in `<main>'
+2016-01-16T11:35:18.348210+00:00 app[web.1]: [2016-01-16 11:35:18] INFO  going to shutdown ...
+2016-01-16T11:35:18.348278+00:00 app[web.1]: Exiting
+2016-01-16T11:35:19.258152+00:00 heroku[web.1]: Process exited with status 143
+2016-01-16T11:54:49.641713+00:00 heroku[web.1]: Unidling
+2016-01-16T11:54:49.642002+00:00 heroku[web.1]: State changed from down to starting
+2016-01-16T11:54:51.864750+00:00 heroku[web.1]: Starting process with command `bin/rails server -p 57047 -e production`
+2016-01-16T11:54:58.094733+00:00 app[web.1]: [2016-01-16 11:54:58] INFO  WEBrick 1.3.1
+2016-01-16T11:54:58.094759+00:00 app[web.1]: [2016-01-16 11:54:58] INFO  ruby 2.0.0 (2015-12-16) [x86_64-linux]
+2016-01-16T11:54:58.095145+00:00 app[web.1]: [2016-01-16 11:54:58] INFO  WEBrick::HTTPServer#start: pid=3 port=57047
+2016-01-16T11:54:58.694872+00:00 heroku[web.1]: State changed from starting to up
+2016-01-16T11:54:59.841973+00:00 heroku[router]: at=info method=GET path="/users/sign_up" host=secure-basin-5195.herokuapp.com request_id=3483a77f-c219-485b-816c-581635242722 fwd="115.188.243.46" dyno=web.1 connect=0ms service=143ms status=500 bytes=1754
+2016-01-16T11:54:59.721282+00:00 app[web.1]: => Booting WEBrick
+2016-01-16T11:54:59.721287+00:00 app[web.1]: => Rails 4.2.5 application starting in production on http://0.0.0.0:57047
+2016-01-16T11:54:59.721288+00:00 app[web.1]: => Run `rails server -h` for more startup options
+2016-01-16T11:54:59.721289+00:00 app[web.1]: => Ctrl-C to shutdown server
+2016-01-16T11:54:59.721290+00:00 app[web.1]: Started GET "/users/sign_up" for 115.188.243.46 at 2016-01-16 11:54:59 +0000
+2016-01-16T11:54:59.810285+00:00 app[web.1]: Processing by Devise::RegistrationsController#new as HTML
+2016-01-16T11:54:59.845118+00:00 app[web.1]: 
+2016-01-16T11:54:59.845120+00:00 app[web.1]: ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "users" does not exist
+2016-01-16T11:54:59.845121+00:00 app[web.1]: LINE 5:                WHERE a.attrelid = '"users"'::regclass
+2016-01-16T11:54:59.845122+00:00 app[web.1]:                                           ^
+2016-01-16T11:54:59.845123+00:00 app[web.1]: :               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+2016-01-16T11:54:59.845125+00:00 app[web.1]:                 FROM pg_attribute a LEFT JOIN pg_attrdef d
+2016-01-16T11:54:59.845124+00:00 app[web.1]:                      pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+2016-01-16T11:54:59.845126+00:00 app[web.1]:                   ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+2016-01-16T11:54:59.845126+00:00 app[web.1]:                WHERE a.attrelid = '"users"'::regclass
+2016-01-16T11:54:59.845127+00:00 app[web.1]:                  AND a.attnum > 0 AND NOT a.attisdropped
+2016-01-16T11:54:59.845128+00:00 app[web.1]:                ORDER BY a.attnum
+2016-01-16T11:54:59.845128+00:00 app[web.1]: ):
+2016-01-16T11:54:59.845129+00:00 app[web.1]:   app/controllers/devise/registrations_controller.rb:103:in `build_resource'
+2016-01-16T11:54:59.845130+00:00 app[web.1]:   app/controllers/devise/registrations_controller.rb:7:in `new'
+2016-01-16T11:54:59.845131+00:00 app[web.1]: 
+2016-01-16T11:54:59.845132+00:00 app[web.1]: 
+2016-01-16T11:54:59.843186+00:00 app[web.1]: Completed 500 Internal Server Error in 32ms (ActiveRecord: 2.5ms)
+2016-01-16T11:56:13.765438+00:00 heroku[router]: at=info method=GET path="/" host=secure-basin-5195.herokuapp.com request_id=09376540-01ab-4f10-a62e-06f2ae0078b6 fwd="115.188.243.46" dyno=web.1 connect=1ms service=41ms status=200 bytes=3820
+2016-01-16T11:56:13.711355+00:00 app[web.1]: Started GET "/" for 115.188.243.46 at 2016-01-16 11:56:13 +0000
+2016-01-16T11:56:13.723165+00:00 app[web.1]:   Rendered visitors/index.html.haml within layouts/application (2.0ms)
+2016-01-16T11:56:13.745138+00:00 app[web.1]: Completed 200 OK in 29ms (Views: 28.7ms | ActiveRecord: 0.0ms)
+2016-01-16T11:56:13.716086+00:00 app[web.1]: Processing by VisitorsController#index as HTML
+2016-01-16T11:56:13.741254+00:00 app[web.1]:   Rendered layouts/_navigation_links.html.haml (8.0ms)
+2016-01-16T11:56:13.741353+00:00 app[web.1]:   Rendered layouts/_navigation.html.haml (12.8ms)
+2016-01-16T11:56:13.744642+00:00 app[web.1]:   Rendered layouts/_messages.html.haml (2.4ms)
+2016-01-16T11:56:14.043982+00:00 heroku[router]: at=info method=GET path="/assets/application-26541b9229dafea14cd9169d592056c01dd4ce4a7eabd777b78bd82ea4473215.css" host=secure-basin-5195.herokuapp.com request_id=26eb38b2-4a16-4759-9c0d-13a689d3be92 fwd="115.188.243.46" dyno=web.1 connect=2ms service=5ms status=304 bytes=133
+2016-01-16T11:56:14.504121+00:00 heroku[router]: at=info method=GET path="/assets/application-2c49a9bf74ef6fff85aeeffc5a7ae29af3b23a8741c0d2328107c07d4f4fafd9.js" host=secure-basin-5195.herokuapp.com request_id=31387940-68c0-42d3-a2b7-e28feebe9049 fwd="115.188.243.46" dyno=web.1 connect=1ms service=5ms status=304 bytes=133
+2016-01-16T11:56:14.802179+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=secure-basin-5195.herokuapp.com request_id=c105f07e-9632-4c3f-8cfe-a664a5b211f9 fwd="115.188.243.46" dyno=web.1 connect=1ms service=3ms status=304 bytes=133
+2016-01-16T12:29:41.252501+00:00 heroku[web.1]: Idling
+2016-01-16T12:29:41.253101+00:00 heroku[web.1]: State changed from up to down
+2016-01-16T12:29:46.034685+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2016-01-16T12:29:47.514113+00:00 app[web.1]: [2016-01-16 12:29:47] FATAL SignalException: SIGTERM
+2016-01-16T12:29:47.514120+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:170:in `select'
+2016-01-16T12:29:47.514124+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:170:in `block in start'
+2016-01-16T12:29:47.514125+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:32:in `start'
+2016-01-16T12:29:47.514125+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:160:in `start'
+2016-01-16T12:29:47.514127+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/server.rb:286:in `start'
+2016-01-16T12:29:47.514126+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/handler/webrick.rb:34:in `run'
+2016-01-16T12:29:47.514127+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.5/lib/rails/commands/server.rb:80:in `start'
+2016-01-16T12:29:47.514128+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.5/lib/rails/commands/commands_tasks.rb:80:in `block in server'
+2016-01-16T12:29:47.514130+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.5/lib/rails/commands/commands_tasks.rb:75:in `server'
+2016-01-16T12:29:47.514130+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.5/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+2016-01-16T12:29:47.514129+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.5/lib/rails/commands/commands_tasks.rb:75:in `tap'
+2016-01-16T12:29:47.514131+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.5/lib/rails/commands.rb:17:in `<top (required)>'
+2016-01-16T12:29:47.514132+00:00 app[web.1]: 	bin/rails:9:in `require'
+2016-01-16T12:29:47.514132+00:00 app[web.1]: 	bin/rails:9:in `<main>'
+2016-01-16T12:29:47.514222+00:00 app[web.1]: [2016-01-16 12:29:47] INFO  going to shutdown ...
+2016-01-16T12:29:47.514272+00:00 app[web.1]: [2016-01-16 12:29:47] INFO  WEBrick::HTTPServer#start done.
+2016-01-16T12:29:47.514292+00:00 app[web.1]: Exiting
+2016-01-16T12:29:48.309498+00:00 heroku[web.1]: Process exited with status 143
+2016-01-16T11:54:59.721287+00:00 app[web.1]: => Rails 4.2.5 application starting in production on http://0.0.0.0:57047
+2016-01-16T11:54:59.721288+00:00 app[web.1]: => Run `rails server -h` for more startup options
+2016-01-16T11:54:59.721289+00:00 app[web.1]: => Ctrl-C to shutdown server
+2016-01-16T11:54:59.721290+00:00 app[web.1]: Started GET "/users/sign_up" for 115.188.243.46 at 2016-01-16 11:54:59 +0000
+2016-01-16T11:54:59.810285+00:00 app[web.1]: Processing by Devise::RegistrationsController#new as HTML
+2016-01-16T11:54:59.845118+00:00 app[web.1]: 
+2016-01-16T11:54:59.845120+00:00 app[web.1]: ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "users" does not exist
+2016-01-16T11:54:59.845121+00:00 app[web.1]: LINE 5:                WHERE a.attrelid = '"users"'::regclass
+2016-01-16T11:54:59.845122+00:00 app[web.1]:                                           ^
+2016-01-16T11:54:59.845123+00:00 app[web.1]: :               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+2016-01-16T11:54:59.845125+00:00 app[web.1]:                 FROM pg_attribute a LEFT JOIN pg_attrdef d
+2016-01-16T11:54:59.845124+00:00 app[web.1]:                      pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+2016-01-16T11:54:59.845126+00:00 app[web.1]:                   ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+2016-01-16T11:54:59.845126+00:00 app[web.1]:                WHERE a.attrelid = '"users"'::regclass
+2016-01-16T11:54:59.845127+00:00 app[web.1]:                  AND a.attnum > 0 AND NOT a.attisdropped
+2016-01-16T11:54:59.845128+00:00 app[web.1]:                ORDER BY a.attnum
+2016-01-16T11:54:59.845128+00:00 app[web.1]: ):
+2016-01-16T11:54:59.845129+00:00 app[web.1]:   app/controllers/devise/registrations_controller.rb:103:in `build_resource'
+2016-01-16T11:54:59.845130+00:00 app[web.1]:   app/controllers/devise/registrations_controller.rb:7:in `new'
+2016-01-16T11:54:59.845131+00:00 app[web.1]: 
+2016-01-16T11:54:59.845132+00:00 app[web.1]: 
+2016-01-16T11:54:59.843186+00:00 app[web.1]: Completed 500 Internal Server Error in 32ms (ActiveRecord: 2.5ms)
+2016-01-16T11:56:13.765438+00:00 heroku[router]: at=info method=GET path="/" host=secure-basin-5195.herokuapp.com request_id=09376540-01ab-4f10-a62e-06f2ae0078b6 fwd="115.188.243.46" dyno=web.1 connect=1ms service=41ms status=200 bytes=3820
+2016-01-16T11:56:13.711355+00:00 app[web.1]: Started GET "/" for 115.188.243.46 at 2016-01-16 11:56:13 +0000
+2016-01-16T11:56:13.723165+00:00 app[web.1]:   Rendered visitors/index.html.haml within layouts/application (2.0ms)
+2016-01-16T11:56:13.745138+00:00 app[web.1]: Completed 200 OK in 29ms (Views: 28.7ms | ActiveRecord: 0.0ms)
+2016-01-16T11:56:13.716086+00:00 app[web.1]: Processing by VisitorsController#index as HTML
+2016-01-16T11:56:13.741254+00:00 app[web.1]:   Rendered layouts/_navigation_links.html.haml (8.0ms)
+2016-01-16T11:56:13.741353+00:00 app[web.1]:   Rendered layouts/_navigation.html.haml (12.8ms)
+2016-01-16T11:56:13.744642+00:00 app[web.1]:   Rendered layouts/_messages.html.haml (2.4ms)
+2016-01-16T11:56:14.043982+00:00 heroku[router]: at=info method=GET path="/assets/application-26541b9229dafea14cd9169d592056c01dd4ce4a7eabd777b78bd82ea4473215.css" host=secure-basin-5195.herokuapp.com request_id=26eb38b2-4a16-4759-9c0d-13a689d3be92 fwd="115.188.243.46" dyno=web.1 connect=2ms service=5ms status=304 bytes=133
+2016-01-16T11:56:14.504121+00:00 heroku[router]: at=info method=GET path="/assets/application-2c49a9bf74ef6fff85aeeffc5a7ae29af3b23a8741c0d2328107c07d4f4fafd9.js" host=secure-basin-5195.herokuapp.com request_id=31387940-68c0-42d3-a2b7-e28feebe9049 fwd="115.188.243.46" dyno=web.1 connect=1ms service=5ms status=304 bytes=133
+2016-01-16T11:56:14.802179+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=secure-basin-5195.herokuapp.com request_id=c105f07e-9632-4c3f-8cfe-a664a5b211f9 fwd="115.188.243.46" dyno=web.1 connect=1ms service=3ms status=304 bytes=133
+2016-01-16T12:29:41.252501+00:00 heroku[web.1]: Idling
+2016-01-16T12:29:41.253101+00:00 heroku[web.1]: State changed from up to down
+2016-01-16T12:29:46.034685+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2016-01-16T12:29:47.514113+00:00 app[web.1]: [2016-01-16 12:29:47] FATAL SignalException: SIGTERM
+2016-01-16T12:29:47.514120+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:170:in `select'
+2016-01-16T12:29:47.514124+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:170:in `block in start'
+2016-01-16T12:29:47.514125+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:32:in `start'
+2016-01-16T12:29:47.514125+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:160:in `start'
+2016-01-16T12:29:47.514127+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/server.rb:286:in `start'
+2016-01-16T12:29:47.514126+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/handler/webrick.rb:34:in `run'
+2016-01-16T12:29:47.514127+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.5/lib/rails/commands/server.rb:80:in `start'
+2016-01-16T12:29:47.514128+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.5/lib/rails/commands/commands_tasks.rb:80:in `block in server'
+2016-01-16T12:29:47.514130+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.5/lib/rails/commands/commands_tasks.rb:75:in `server'
+2016-01-16T12:29:47.514130+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.5/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+2016-01-16T12:29:47.514129+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.5/lib/rails/commands/commands_tasks.rb:75:in `tap'
+2016-01-16T12:29:47.514131+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.5/lib/rails/commands.rb:17:in `<top (required)>'
+2016-01-16T12:29:47.514132+00:00 app[web.1]: 	bin/rails:9:in `require'
+2016-01-16T12:29:47.514132+00:00 app[web.1]: 	bin/rails:9:in `<main>'
+2016-01-16T12:29:47.514222+00:00 app[web.1]: [2016-01-16 12:29:47] INFO  going to shutdown ...
+2016-01-16T12:29:47.514272+00:00 app[web.1]: [2016-01-16 12:29:47] INFO  WEBrick::HTTPServer#start done.
+2016-01-16T12:29:47.514292+00:00 app[web.1]: Exiting
+2016-01-16T12:29:48.309498+00:00 heroku[web.1]: Process exited with status 143
+2016-01-17T01:12:58.946561+00:00 heroku[api]: Resize web to Hobby by sloukoianov@xtra.co.nz
+2016-01-17T01:12:58.969354+00:00 heroku[api]: Resize worker to Hobby by sloukoianov@xtra.co.nz
+2016-01-17T01:12:58.992131+00:00 heroku[api]: Resize console to Hobby by sloukoianov@xtra.co.nz
+2016-01-17T01:12:59.014659+00:00 heroku[api]: Resize rake to Hobby by sloukoianov@xtra.co.nz
+2016-01-17T01:16:50.562669+00:00 heroku[web.1]: Unidling
+2016-01-17T01:16:50.563055+00:00 heroku[web.1]: State changed from down to starting
+2016-01-17T01:16:52.589643+00:00 heroku[web.1]: Starting process with command `bin/rails server -p 43481 -e production`
+2016-01-17T01:16:56.407978+00:00 app[web.1]: [2016-01-17 01:16:56] INFO  WEBrick 1.3.1
+2016-01-17T01:16:56.408000+00:00 app[web.1]: [2016-01-17 01:16:56] INFO  ruby 2.0.0 (2015-12-16) [x86_64-linux]
+2016-01-17T01:16:56.408227+00:00 app[web.1]: [2016-01-17 01:16:56] INFO  WEBrick::HTTPServer#start: pid=3 port=43481
+2016-01-17T01:16:56.867921+00:00 heroku[web.1]: State changed from starting to up
+2016-01-17T01:16:57.780059+00:00 heroku[router]: at=info method=GET path="/" host=secure-basin-5195.herokuapp.com request_id=b158248b-48ad-40f3-8e5a-9aa5c7e5442e fwd="115.188.243.46" dyno=web.1 connect=1ms service=132ms status=200 bytes=3820
+2016-01-17T01:16:57.640384+00:00 app[web.1]: => Ctrl-C to shutdown server
+2016-01-17T01:16:57.640379+00:00 app[web.1]: => Booting WEBrick
+2016-01-17T01:16:57.640382+00:00 app[web.1]: => Rails 4.2.5 application starting in production on http://0.0.0.0:43481
+2016-01-17T01:16:57.640384+00:00 app[web.1]: Started GET "/" for 115.188.243.46 at 2016-01-17 01:16:57 +0000
+2016-01-17T01:16:57.640383+00:00 app[web.1]: => Run `rails server -h` for more startup options
+2016-01-17T01:16:57.730402+00:00 app[web.1]: Processing by VisitorsController#index as HTML
+2016-01-17T01:16:57.765738+00:00 app[web.1]:   Rendered layouts/_messages.html.haml (1.6ms)
+2016-01-17T01:16:57.763328+00:00 app[web.1]:   Rendered layouts/_navigation_links.html.haml (9.8ms)
+2016-01-17T01:16:57.763421+00:00 app[web.1]:   Rendered layouts/_navigation.html.haml (13.2ms)
+2016-01-17T01:16:57.737075+00:00 app[web.1]:   Rendered visitors/index.html.haml within layouts/application (1.6ms)
+2016-01-17T01:16:57.766037+00:00 app[web.1]: Completed 200 OK in 35ms (Views: 35.1ms | ActiveRecord: 0.0ms)
+2016-01-17T01:16:58.051900+00:00 heroku[router]: at=info method=GET path="/assets/application-26541b9229dafea14cd9169d592056c01dd4ce4a7eabd777b78bd82ea4473215.css" host=secure-basin-5195.herokuapp.com request_id=e3bf7fe4-90ca-4783-996a-a0bcc7fdfb61 fwd="115.188.243.46" dyno=web.1 connect=1ms service=3ms status=304 bytes=133
+2016-01-17T01:16:58.448697+00:00 heroku[router]: at=info method=GET path="/assets/application-2c49a9bf74ef6fff85aeeffc5a7ae29af3b23a8741c0d2328107c07d4f4fafd9.js" host=secure-basin-5195.herokuapp.com request_id=752a378b-ceee-4c45-834f-016733dafa76 fwd="115.188.243.46" dyno=web.1 connect=1ms service=3ms status=304 bytes=133
+2016-01-17T01:16:58.716563+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=secure-basin-5195.herokuapp.com request_id=6d02c771-42a0-4ac9-9481-0eb02631f443 fwd="115.188.243.46" dyno=web.1 connect=1ms service=3ms status=304 bytes=133
+2016-01-17T01:17:01.622229+00:00 heroku[router]: at=info method=GET path="/users/sign_up" host=secure-basin-5195.herokuapp.com request_id=f7aa1e35-475b-4362-bd48-c77cae5dd713 fwd="115.188.243.46" dyno=web.1 connect=2ms service=21ms status=500 bytes=1754
+2016-01-17T01:17:01.596197+00:00 app[web.1]: Processing by Devise::RegistrationsController#new as HTML
+2016-01-17T01:17:01.602276+00:00 app[web.1]:                  AND a.attnum > 0 AND NOT a.attisdropped
+2016-01-17T01:17:01.602270+00:00 app[web.1]: 
+2016-01-17T01:17:01.602277+00:00 app[web.1]:                ORDER BY a.attnum
+2016-01-17T01:17:01.602271+00:00 app[web.1]: ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "users" does not exist
+2016-01-17T01:17:01.602277+00:00 app[web.1]: ):
+2016-01-17T01:17:01.602272+00:00 app[web.1]: LINE 5:                WHERE a.attrelid = '"users"'::regclass
+2016-01-17T01:17:01.602278+00:00 app[web.1]:   app/controllers/devise/registrations_controller.rb:103:in `build_resource'
+2016-01-17T01:17:01.602273+00:00 app[web.1]:                                           ^
+2016-01-17T01:17:01.602278+00:00 app[web.1]:   app/controllers/devise/registrations_controller.rb:7:in `new'
+2016-01-17T01:17:01.602273+00:00 app[web.1]: :               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+2016-01-17T01:17:01.602279+00:00 app[web.1]: 
+2016-01-17T01:17:01.602274+00:00 app[web.1]:                      pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+2016-01-17T01:17:01.602279+00:00 app[web.1]: 
+2016-01-17T01:17:01.602274+00:00 app[web.1]:                 FROM pg_attribute a LEFT JOIN pg_attrdef d
+2016-01-17T01:17:01.602275+00:00 app[web.1]:                   ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+2016-01-17T01:17:01.602276+00:00 app[web.1]:                WHERE a.attrelid = '"users"'::regclass
+2016-01-17T01:17:01.592241+00:00 app[web.1]: Started GET "/users/sign_up" for 115.188.243.46 at 2016-01-17 01:17:01 +0000
+2016-01-17T01:17:01.601336+00:00 app[web.1]: Completed 500 Internal Server Error in 5ms (ActiveRecord: 3.1ms)

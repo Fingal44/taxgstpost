@@ -3,28 +3,22 @@
   %tbody
     %tr
       %th Glcode
-      %th "  "
       %th Code
-      %th "  "
       %th Content
-      %th "  "
       %th Header
-      %th "  "
       %th Gst
+      %th User
       %th
       %th
       %th 
     - @charts.each do |chart| 
       %tr
         %td= chart.glcode
-        %td="  "
         %td= chart.code
-        %td
         %td= chart.content
-        %td
         %td= chart.header
-        %td
         %td= chart.gst
+        %td= chart.users_id
         %td
         %td= link_to 'Show', chart
         %td= link_to 'Edit', edit_chart_path(chart)

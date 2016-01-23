@@ -11,7 +11,7 @@
 = current_user.expire_date.to_s
 
 %p
-  %b= link_to 'DateSettings:', edit_datesetting_path(@datesetting.first)
+  %b= link_to 'DateSettings:', edit_datesetting_path(@datesetting)
   Setting start and end dates for working period
 %p
   %b= link_to 'Transactions:', transactions_path
@@ -62,6 +62,12 @@
       - if AdminTable.any?
         = AdminTable.all.count
         registered
+    %p
+      %b= link_to 'Users:', users_path
+      = User.all.count 
+    %p
+      %b= link_to 'Full charts:', charts_path
+      = Chart.all.count 
   
 
 

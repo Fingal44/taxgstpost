@@ -6,7 +6,7 @@
 
   resources :banks
 
-  resources :datesettings
+  
 
   resources :initsettings
 
@@ -14,7 +14,7 @@
   devise_for :users
     resources :users, :only => [:index, :show]
   
-  resources :charts
+  
   
   resources :exp_imps
   
@@ -47,12 +47,14 @@
   get 'reallocate', to: 'reallocate#new'
   post 'reallocate', to: 'reallocate#create', :as => 'reallocate_data'
   post 'employees/:id/make_payment', to: 'employees#create', :as => 'employee_make_payment'
+  get 'charts/indexfull', to: 'charts#indexfull'
   resources :employees do
     member do
       get 'make_payment'
     end
   end
-  
+  resources :datesettings
+  resources :charts
   resources :employees 
   resources :transactions
   resources :temp_transactions 
