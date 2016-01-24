@@ -6,7 +6,7 @@ class FutureTransactionsController < ApplicationController
   # GET /future_transactions
   # GET /future_transactions.json
   def index
-    @future_transactions = FutureTransaction.where("users_id = ?",current_user.id)
+    @future_transactions = FutureTransaction.where("users_id = ?",current_user.id).order("code","date")
     @chart_clones = ChartClone.all
     @partcharts = Chart.where("users_id = ? and glcode = ? and header = ?" , current_user.id, ChartClone.last.id,0)
      respond_to do |format|
@@ -60,7 +60,7 @@ class FutureTransactionsController < ApplicationController
           @transaction.amounttotal = mitem.amounttotal
           @transaction.netamount = mitem.netamount
           @transaction.chart_clones_id = mitem.chart_clones_id
-          @transaction.chart_id = mitem.code
+          @transaction.code = mitem.code
           @transaction.gsttype = 0
           @transaction.co = mitem.co
           @transaction.date = DateTime.now

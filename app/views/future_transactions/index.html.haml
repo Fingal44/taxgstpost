@@ -4,11 +4,8 @@
     %tbody
       %tr
         %th Date
-        %th "        "    
         %th Glcode
-        %th "        "
         %th Code
-        %th "        "
         %th Amounttotal
         %th Gsttype
         %th Gstamount
@@ -22,11 +19,8 @@
       - @future_transactions.each do |transaction| 
         %tr
           %td= transaction.date
-          %td= "        "
           %td= transaction.chart_clones_id
-          %td= "        "
           %td= transaction.code
-          %td= "        "
           %td= transaction.amounttotal
           %td= transaction.gsttype
           %td= transaction.gstamount

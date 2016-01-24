@@ -62,12 +62,6 @@
       - if AdminTable.any?
         = AdminTable.all.count
         registered
-    %p
-      %b= link_to 'Users:', users_path
-      = User.all.count 
-    %p
-      %b= link_to 'Full charts:', charts_path
-      = Chart.all.count 
-  
+ 
 
 

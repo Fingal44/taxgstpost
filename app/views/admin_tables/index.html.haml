@@ -16,11 +16,7 @@
         %td= link_to 'Destroy', admin_table, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 = link_to 'New Admin table', new_admin_table_path
-= Link_to 'Users:', user_path
-  = User.all.count registered
-= Link_to 'Full charts:', charts_path
-  = Chart.all.count registered
-  
+
 
 
 

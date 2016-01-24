@@ -24,7 +24,7 @@ class TempTransactionsController < ApplicationController
   def new
     @temp_transaction = TempTransaction.new
     @chart_clones = ChartClone.all
-    @partcharts = Chart.where("users_id = ? and glcode = ?  and header = ?" , current_user.id, ChartClone.last.id,0)
+    @partcharts = Chart.where("users_id = ? and glcode = ?  and header = ?" , current_user.id, ChartClone.last.id,0).order("code")
     @megatrans = @temp_transaction
   end
 
@@ -33,9 +33,9 @@ class TempTransactionsController < ApplicationController
     @chart_clones = ChartClone.all
     if @temp_transaction.chart_clones_id != nil
       glc = ChartClone.where("id = ?", @temp_transaction.chart_clones_id).last.id
-      @partcharts = Chart.where("users_id = ? and glcode = ?" , current_user.id, glc)
+      @partcharts = Chart.where("users_id = ? and glcode = ?" , current_user.id, glc).order("code")
     else
-      @partcharts = Chart.where("users_id = ? and glcode = ?" , current_user.id, 6)
+      @partcharts = Chart.where("users_id = ? and glcode = ?" , current_user.id, 6).order("code")
     end
     @megatrans = @temp_transaction
   end
