@@ -10,5 +10,8 @@
   = "csv File:"
   = file_field_tag :args, :multipart => true
   %br
-  
+ 
+  = "Working folder:"
+  = text_field_tag :argf, placeholder = Dir.pwd
+
   = submit_tag "Run Transfer"

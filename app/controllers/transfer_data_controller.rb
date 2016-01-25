@@ -13,13 +13,22 @@ class TransferDataController  < ApplicationController
     else
       filen = params[:args] + ".csv"
     end
+    # byebug
+    if params[:argf].nil?
+      ff = Dir.pwd
+    else
+      ff = params[:argf]
+    end
+    filen = ff + "/" + filen
+   # byebug
     # system "transfer data", params[:args]
     system "transfer data", filen
     case bankn
      
     when  "1"
-      
+      # byebug
       CSV.foreach(filen) do |row|
+       # byebug
         rr = row.inspect
         ssk = rr.split(',')
         # byebug

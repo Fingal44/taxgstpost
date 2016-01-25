@@ -1,12 +1,14 @@
 def create_future_trans(their_amount, their_period)
+    
       @_tax = @employee.taxcode #Tax code
-      @_acc = @employee.accprocent #ACC percentage
-      @_ks = @employee.kiwisaver #Kiwisaver % deduction
-      if @_ks == nil
+      @_acc = @employee.accprocent.to_f #ACC percentage
+      @_ks = @employee.kiwisaver.to_f #Kiwisaver % deduction
+      if @_ks.nil?
         @_ks = 0
       else
         @_ks = (@_ks/100).to_f
       end
+      # byebug
       if @employee.taxprocent.nil?
         @_taxpr = 0
       else
@@ -15,7 +17,7 @@ def create_future_trans(their_amount, their_period)
       @_kscontribution = 0 #Employer contribution to kiwisaver
       @_ksdeduction = 0 #Employee kiwisaver deduction
       their_amount_f = their_amount.to_f
-      
+     # byebug
       def get_student_loan_existing(taxcode)
         
         if taxcode.include?("SL")
@@ -149,7 +151,7 @@ def create_future_trans(their_amount, their_period)
             if @_ks > 0
               ret_tax_big = calc_middle_tax(theam) 
               ret_tax_small = calc_middle_tax(their_amount_f)
-              _kscontribution = (theam - their_amount_f) - (ret_tax_big - ret_tax_small)
+              @_kscontribution = (theam - their_amount_f) - (ret_tax_big - ret_tax_small)
               return ret_tax_big.round(2)
             else
               ret_tax = calc_middle_tax(their_amount_f)
@@ -184,6 +186,7 @@ def create_future_trans(their_amount, their_period)
                 ret_tax_big = calc_usual_tax(theam) 
                 ret_tax_small = calc_usual_tax(their_amount_f)
                 @_kscontribution = (theam - their_amount_f) - (ret_tax_big - ret_tax_small)
+                byebug
                 return ret_tax_big.round(2)
               else
                 ret_tax = calc_usual_tax(their_amount_f)
@@ -210,8 +213,8 @@ def create_future_trans(their_amount, their_period)
         return ret_sl
       end
       
-      def calc_ks(their_amount_f, _tks)
-        ret_ks = their_amount_f * _tks / 100 + @_kscontribution.to_f
+      def calc_ks(their_amount_f, _tks) # return 
+        ret_ks = their_amount_f * _tks  + @_kscontribution.to_f
         return ret_ks
       end
 
@@ -221,7 +224,7 @@ def create_future_trans(their_amount, their_period)
       # byebug
       @trantax.amounttotal = calc_tax(their_amount_f,their_period)
       @trantax.netamount = @trantax.amounttotal
-      
+      byebug
       @netamount0 = @netamount0 - @trantax.netamount
       @trantax.gstamount = 0
       @trantax.save
@@ -243,8 +246,8 @@ def create_future_trans(their_amount, their_period)
           @trantax.save
         end     
       end
-
-      if @_ks != nil
+      # byebug
+      if !@_ks.nil?
         if @_ks > 0
           create_common_part(4)
           @trantax.amounttotal = calc_ks(their_amount_f,@_ks)
