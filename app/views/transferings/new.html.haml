@@ -1,0 +1,13 @@
+= form_for(@transfering) do |f| 
+  #field
+    = "Bank:"
+    = f.select :argb, options_for_select( {"ANZ" => "1", "ANZ visa" => "2", "ASB" => "3", "BNZ" => 4, "Kiwi bank" => "5", "Westpack bank" => "6"}) 
+  #field
+    = "Company:"
+    = f.select :argn, options_for_select( {"Person" => "1", "Company" => "2"}) 
+  #field
+    = "csv File:"
+    = f.file_field :args, :multipart => true
+
+  #actions
+    = f.submit "Run Transfer"

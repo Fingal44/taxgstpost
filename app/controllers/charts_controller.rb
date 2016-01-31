@@ -7,7 +7,7 @@ class ChartsController < ApplicationController
   # GET /charts
   # GET /charts.json
   def index
-    #cu=current_user.id
+    # @trd=TransferData.all
     if current_user == nil  
       @charts = Chart.where("users_id = 0").order("code")
     else
@@ -83,6 +83,7 @@ class ChartsController < ApplicationController
   # PUT /charts/1
   # PUT /charts/1.json
   def update
+    byebug
     respond_to do |format|
       if @chart.update(chart_params)
         format.html { redirect_to @chart, notice: 'Chart was successfully updated.' }
@@ -114,6 +115,6 @@ class ChartsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def chart_params
-      params.require(:chart).permit(:code, :content, :glcode, :gst, :header, :users_id)
+      params.require(:chart).permit(:code, :content, :glcode, :gst, :header, :users_id, :args)
     end
 end

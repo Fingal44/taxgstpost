@@ -46,7 +46,7 @@
         = FutureTransaction.where("users_id = ?",current_user.id).count
         registered. Display, edit and move to transactions approved payee transactions.
     %p
-      %b= link_to 'TransferData:', transfer_data_path
+      %b= link_to 'Transferings:', transferings_path
       Transfer .csv file from bank to Temp_transactions.
     %p
       - if TempTransaction.any?
