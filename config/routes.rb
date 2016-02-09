@@ -9,23 +9,27 @@
   
 
   resources :initsettings
-
+  
+  # get 'users/:id/edit' => 'users#edit'
+  # post 'users/:id/edit', to: 'users#create'
+  
   root to: 'visitors#index'
-  devise_for :users
-    resources :users, :only => [:index, :show]
+  # devise_for :users, :path_prefix => 'my'
+  # resources :users, :only => [:new, :show, :create]
   
+  devise_for :users, :path_prefix => 'my'
+    resources :users
   
-  
+  #resources :users, :only => [:new, :edit, :create, :delete, :update]
   resources :exp_imps
-  
-  # resources :rus_messages
   resources :gst_returns
   resources :gst_return
   
-  get 'visitors/main_menu', as: 'Main_menu'
+  get 'visitors/main_menu', as: 'Main_menu' 
   get 'visitors/adminservice', as: 'Admin_service'
   get 'visitors/index_rus', as: 'index_rus'
   get 'visitors/contacts' => 'visitors#contacts'
+  # get 'visitors/inits' => 'visitors#inits'
   get 'transactions/update_codes', as: 'update_codes'
   get 'transactions/:id/update_codes' => 'transactions#update_codes'
   get 'temp_transactions/update_cur_codes', as: 'update_cur_codes'
@@ -48,6 +52,10 @@
   post 'reallocate', to: 'reallocate#create', :as => 'reallocate_data'
   post 'employees/:id/make_payment', to: 'employees#create', :as => 'employee_make_payment'
   get 'charts/indexfull', to: 'charts#indexfull'
+  get 'transactions/indexfull', to: 'transactions#indexfull'
+  get 'temp_transactions/indexfull', to: 'temp_transactions#indexfull'
+  get 'future_transactions/indexfull', to: 'future_transactions#indexfull'
+  get 'employees/indexfull', to: 'employees#indexfull'
   resources :employees do
     member do
       get 'make_payment'

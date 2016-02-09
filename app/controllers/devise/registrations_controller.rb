@@ -13,7 +13,9 @@ class Devise::RegistrationsController < DeviseController
   # POST /resource
   def create
     build_resource(sign_up_params)
-
+    # if !Chart.all.any?
+    #  make_0_chart
+    # end
     resource.save
     yield resource if block_given?
  
@@ -49,6 +51,7 @@ class Devise::RegistrationsController < DeviseController
   # We need to use a copy of the resource because we don't want to change
   # the current user in place.
   def update
+    
     self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
     prev_unconfirmed_email = resource.unconfirmed_email if resource.respond_to?(:unconfirmed_email)
 
@@ -70,6 +73,7 @@ class Devise::RegistrationsController < DeviseController
 
   # DELETE /resource
   def destroy
+    # byebug
     resource.destroy
     Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)
     set_flash_message :notice, :destroyed if is_flashing_format?
@@ -133,6 +137,41 @@ class Devise::RegistrationsController < DeviseController
       end
   
   # User defined programms
+=begin
+      def make_0_chart
+        file_data = ActionDispatch::Http::UploadedFile("charts.csv")
+        # file_data = Rails.root.join('/charts.csv')
+        byebug
+        if file_data.respond_to?(:read)
+          filen = file_data.read
+        elsif file_data.respond_to?(:path)
+          filen = File.read(file_data.path)
+        else
+          logger.error "Bad file_data: #{file_data.class.name}: #{file_data.inspect}"
+        end
+        ssk = Array.new
+        rr = filen.split(/\r?\n/)
+        i = 0
+        while !rr[i].nil?
+          ssk[i] = rr[i].split(',')
+          i+=1
+        end
+        rrc = rr.count-1
+        @chart = Chart.new
+        # ssc = ssk[i].count-1
+        for j in 0..rrc
+
+          @chart.glcode= ssk[j].glcode
+          @chart.code= ssk[j].code
+          @chart.gst= ssk[j].gst
+          @chart.header= ssk[j].header
+          @chart.content= ssk[j].content
+          @chartsn.users_id= 0
+        #  byebug
+          @chart.save
+        end
+      end
+=end
       def make_id_chart
         @charts = Chart.where(users_id: 0)
       # byebug
@@ -171,6 +210,10 @@ class Devise::RegistrationsController < DeviseController
         @usersf.save
       end
   
+      def delete_remains
+      
+      end
+
       def sign_up_params
         params.require(:user).permit(:email, :category, :expire_date, :name, :password, :password_confirmation, :current_password)
       end

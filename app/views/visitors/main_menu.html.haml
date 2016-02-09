@@ -7,7 +7,7 @@
 - when 2
   = "You are subscribed now until"
 - when 3
-  = "Привет, морда"
+  = "Привет, морда - еще долго, до "
 = current_user.expire_date.to_s
 
 %p
@@ -54,14 +54,7 @@
         = Transaction.where("users_id = ? and co = ?",current_user.id,0).count
         registered
   
-  - if current_user.category < 3
-    %p
-  - else
-    %p
-      %b= link_to 'Tables:', admin_tables_path
-      - if AdminTable.any?
-        = AdminTable.all.count
-        registered
+  
  
 
 

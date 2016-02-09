@@ -7,7 +7,9 @@ class EmployeesController < ApplicationController
   def index
     @employees = Employee.where("users_id = ?",current_user.id)
   end
-
+  def indexfull
+    @employees = Employee.all
+  end
   # GET /employees/1
   # GET /employees/1.json
   def show

@@ -1,53 +1,43 @@
-%h1= t('Listing temp_transactions')
-= form_tag @tts do 
+%h1= t('Listing future transactions')
+= form_tag @fts do 
   %table
     %tbody
       %tr
         %th Date
-          
         %th Glcode
-       
         %th Code
-        
         %th Amounttotal
         %th Gsttype
         %th Gstamount
         %th Netamount
         %th User
         %th Co
-        %th What
-        %th Who
         %th For_Moving
         
         %th
         %th
-      - @temp_transactions.each do |transaction| 
+      - @future_transactions.each do |transaction| 
         %tr
           %td= transaction.date
-          
           %td= transaction.chart_clones_id
-          
           %td= transaction.code
-          
           %td= transaction.amounttotal
           %td= transaction.gsttype
           %td= transaction.gstamount
           %td= transaction.netamount
           %td= transaction.users_id
           %td= transaction.co
-          %td= transaction.what
-          %td= transaction.who        
+          
           %td= check_box_tag "transaction_ids[]", transaction.id
           %td= link_to 'Show', transaction
-          %td= link_to 'Edit', edit_temp_transaction_path(transaction)
+          %td= link_to 'Edit', edit_future_transaction_path(transaction)
           %td= link_to 'Destroy', transaction, method: :delete, class: :destroy, data: { confirm: 'Are you sure?' } 
   %br        
   
   #actions
-    - if current_user.category > 0
-      = submit_tag "Move to transactions"
+    = submit_tag "Move to transactions"
 
-- if current_user.category > 0
-  = link_to 'New Temp_Transaction', new_temp_transaction_path
+= link_to 'New Future Transaction', new_future_transaction_path
+= link_to 'Compact table', :controller => 'future_transactions', :action => "compact"
 %br
-%b= link_to 'Back', controller: '/visitors', action: 'main_menu', class: 'navbar-brand'
+%b= link_to 'Back', controller: '/visitors', action: 'adminservice', class: 'navbar-brand'

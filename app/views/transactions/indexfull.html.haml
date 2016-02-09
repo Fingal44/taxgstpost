@@ -36,6 +36,5 @@
 %br 
 - if current_user.category > 0       
   %b= link_to 'New Transaction', new_transaction_path
- 
-  %br
-  %b= link_to 'Back', controller: '/visitors', action: 'main_menu', class: 'navbar-brand'
+%br
+%b= link_to 'Back', controller: '/visitors', action: 'adminservice', class: 'navbar-brand'

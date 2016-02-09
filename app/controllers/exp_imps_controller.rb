@@ -16,6 +16,26 @@ class ExpImpsController < ApplicationController
     
   end
   
+  def edit
+    @user = User.find(params[:id])
+    # TempTransaction.where("users_id = ?",12).destroy_all
+  end
+
+  def update
+      # byebug
+       respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_to @user, notice: 'Employee was successfully updated.' }
+        format.json { render :show, status: :ok, location: @user }
+      else
+        format.html { render :edit }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+    # byebug
+    # @user.save
+  end
+
   def create
      require 'csv'
      
@@ -125,6 +145,5 @@ class ExpImpsController < ApplicationController
     end #if  
   end
   
- 
 end 
 

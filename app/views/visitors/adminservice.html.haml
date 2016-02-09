@@ -3,8 +3,28 @@
 %p
   = link_to 'Export/Import_new:', :controller => "exp_imps", :action => "new"
   %br
-  = link_to 'Users:', :controller => "exp_imps", :action => "index" 
+  = link_to 'Users:', :controller => "users", :action => "index" 
   = User.all.count  
   %br
   = link_to 'Full charts:', :controller => "charts", :action => "indexfull"
   = Chart.all.count
+  %br
+  = link_to 'Full transactions:', :controller => "transactions", :action => "indexfull"
+  = Transaction.all.count
+  %br
+  = link_to 'Full temp_transactions:', :controller => "temp_transactions", :action => "indexfull"
+  = TempTransaction.all.count
+  %br
+  = link_to 'Full future_transactions:', :controller => "future_transactions", :action => "indexfull"
+  = FutureTransaction.all.count
+  %br
+  = link_to 'Full employees:', :controller => "employees", :action => "indexfull"
+  = Employee.all.count
+  %br
+%p
+  = link_to 'Tables:', admin_tables_path
+  - if AdminTable.any?
+    = AdminTable.all.count
+  - else
+    not yet AdminTables created
+        

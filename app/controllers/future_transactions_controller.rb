@@ -14,7 +14,19 @@ class FutureTransactionsController < ApplicationController
       format.json { render json: @future_transactions }
      end 
   end
+  def indexfull
+    @sd = Datesetting.where("users_id = ?", current_user.id)
+    @ed = Datesetting.where("users_id = ?", current_user.id)
+    # byebug
+    @future_transactions = FutureTransaction.where("date >= ? and date <= ?", @sd.first.startdate, @ed.first.enddate)
+    @chart_clones = ChartClone.all
+    @partcharts = Chart.where("glcode = ?  and header = ?" , ChartClone.last.id,0)
 
+    respond_to do |format|
+      format.html # index.html.haml
+      format.json { render json: @future_transactions }
+    end
+  end
   # GET /future_transactions/1
   # GET /future_transactions/1.json
   def show
