@@ -1,5 +1,5 @@
 class AdminTablesController < ApplicationController
-  before_action :set_admin_table, only: [ :edit, :update, :destroy]
+  before_action :set_admin_table, only: [ :show, :edit, :update, :destroy]
 
   # GET /admin_tables
   # GET /admin_tables.json
@@ -10,6 +10,7 @@ class AdminTablesController < ApplicationController
   # GET /admin_tables/1
   # GET /admin_tables/1.json
   def show
+    # byebug
   end
 
   # GET /admin_tables/new

@@ -1,0 +1,34 @@
+%h3 Main_menu help.
+%p
+%h4
+  %b DateSettings 
+  set up Start and End dates for all current reports and views.
+  %br
+  %b Transactions 
+  view table transactions what is the base for all reports.
+  %br
+  %b TempTransactions 
+  view table temp_transactions what gets data from your bank statements.
+  %br
+  %b GST Return
+  this is display report for GST Return form for the period setting in DateSettings. 
+  %br
+  %b Tax Return
+  this is display report for Tax Return form for the period setting in DateSettings. 
+  %br
+  %b Employees
+  view table employees for all your employees
+  %br
+  %b Charts
+  view table charts where is your own accounting charts, originally is created for you
+  %br
+  %b FutureTransactions 
+  view table future_transactions what gets data from your employee wages.
+  %br
+  %b Transferings
+  read data from your bank statements to temp_transactions table
+  %br
+  %b Reallocate
+  The allocation of not allocated yet transactions to the company or to the person up to you.
+  %br
+%b= link_to 'Back', controller: '/visitors', action: 'main_menu', class: 'navbar-brand'

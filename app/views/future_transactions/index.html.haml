@@ -4,13 +4,12 @@
     %tbody
       %tr
         %th Date
-        %th Glcode
+        %th Section
         %th Code
         %th Amounttotal
         %th Gsttype
         %th Gstamount
         %th Netamount
-        %th User
         %th Co
         %th For_Moving
         
@@ -20,12 +19,11 @@
         %tr
           %td= transaction.date
           %td= transaction.chart_clones_id
-          %td= transaction.code
+          %td= link_to transaction.code, charts_path
           %td= transaction.amounttotal
           %td= transaction.gsttype
           %td= transaction.gstamount
           %td= transaction.netamount
-          %td= transaction.users_id
           %td= transaction.co
           
           %td= check_box_tag "transaction_ids[]", transaction.id
@@ -35,9 +33,10 @@
   %br        
   
   #actions
-    = submit_tag "Move to transactions"
+    %b= submit_tag "Move to transactions"
 
-= link_to 'New Future Transaction', new_future_transaction_path
-= link_to 'Compact table', :controller => 'future_transactions', :action => "compact"
+%b= link_to 'New Future Transaction', new_future_transaction_path
+%br
+%b= link_to 'Compact table', :controller => 'future_transactions', :action => "compact"
 %br
 %b= link_to 'Back', controller: '/visitors', action: 'main_menu', class: 'navbar-brand'

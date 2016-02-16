@@ -31,7 +31,7 @@
     = f.select :taxcode, options_for_select({"M" => "M","M SL" => "M SL","ME" => "ME","ME SL" => "ME SL","SB" => "SB","SB SL" => "SB SL","S" => "S","S SL" => "S SL","SH" => "SH","SH SL" => "SH SL","ST" => "ST","ST SL" => "ST SL","WT" => "WT","STC" => "STC","CAE" => "CAE","EDW" => "EDW","NSW" => "NSW"}),{},{:id => "sf_taxcode", :onChange  => "findselected()"}
     
   #field
-    = f.label :Procent_tax_code
+    = f.label :Procent_tax_code_only_for_WT_STC_CAE_EDW_NSW_tax_codes
     %br
     = f.text_field :taxprocent, :type => "number", :step => "0.5", placeholder: "20", :id => "tf_taxprocent", :disabled => ''
 

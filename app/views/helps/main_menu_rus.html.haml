@@ -1,0 +1,34 @@
+%h3 Main_menu help.
+%p
+%h4
+  %b DateSettings 
+  Установка стартовой и конечной дат для всех отчетов и просмотров.
+  %br
+  %b Transactions 
+  Работа с таблицей transactions, на которой базируются все отчеты.
+  %br
+  %b TempTransactions 
+  Работа с таблицей temp_transactions, в которую собираются данные из банковских выписок.
+  %br
+  %b GST Return
+  Отчет на экране, содержащий все данные для GST Return form за период, установленный в DateSettings.
+  %br
+  %b Tax Return
+  Отчет на экране, содержащий все данные для IR3 и IR4 form за период, установленный в DateSettings.
+  %br
+  %b Employees
+  Работа с таблицей employees для всех работников, не являющихся self-employed.
+  %br
+  %b Charts
+  Работа с таблицей счетов charts, которая первоначально была создана для Вас.
+  %br
+  %b FutureTransactions 
+  Работа с таблицей future_transactions, которая содержит все Payee выплаты для ваших работников.
+  %br
+  %b Transferings
+  Чтение данных из банковской выписки в таблицу temp_transactions.
+  %br
+  %b Reallocate
+  Распределение не распределенных ранее транзакций к компании или персоне по вашему выбору.
+  %br
+%b= link_to 'Back', controller: '/visitors', action: 'main_menu', class: 'navbar-brand'

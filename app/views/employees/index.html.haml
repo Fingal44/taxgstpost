@@ -16,8 +16,10 @@
     - @employees.each do |chart| 
       %tr
         %td= chart.id
-        %td= chart.firstname
-        %td= chart.lastname
+        %td
+          %b= chart.firstname
+        %td
+          %b= chart.lastname
         %td= chart.irdcode
         %td= chart.taxcode
         %td= chart.accprocent

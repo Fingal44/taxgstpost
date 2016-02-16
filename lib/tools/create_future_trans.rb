@@ -186,7 +186,7 @@ def create_future_trans(their_amount, their_period)
                 ret_tax_big = calc_usual_tax(theam) 
                 ret_tax_small = calc_usual_tax(their_amount_f)
                 @_kscontribution = (theam - their_amount_f) - (ret_tax_big - ret_tax_small)
-                byebug
+               
                 return ret_tax_big.round(2)
               else
                 ret_tax = calc_usual_tax(their_amount_f)
@@ -224,7 +224,7 @@ def create_future_trans(their_amount, their_period)
       # byebug
       @trantax.amounttotal = calc_tax(their_amount_f,their_period)
       @trantax.netamount = @trantax.amounttotal
-      byebug
+      # byebug
       @netamount0 = @netamount0 - @trantax.netamount
       @trantax.gstamount = 0
       @trantax.save

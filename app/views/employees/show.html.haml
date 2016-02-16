@@ -1,4 +1,36 @@
 %p#notice= notice
-= link_to 'Edit', edit_employee_path(@employee)
-|
-= link_to 'Back', employees_path
+
+%p
+  %b> First name:
+  = @employee.firstname
+
+%p
+  
+  %b> Last name:
+  = @employee.lastname 
+
+
+%p
+  %b> IRD number:
+  = @employee.irdcode 
+
+
+%p
+  %b> Procent_of_ACC:
+  = @employee.accprocent 
+
+%p
+  %b> Tax code:
+  = @employee.taxcode
+
+%p
+  %b> Tax procent:
+  = @employee.taxprocent
+
+%p
+  %b> Kiwi_saver_procentage:
+  = @employee.kiwisaver
+
+%b= link_to 'Edit', edit_employee_path(@employee)
+%br
+%b= link_to 'Back', employees_path

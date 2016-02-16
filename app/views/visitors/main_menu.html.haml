@@ -49,11 +49,17 @@
       %b= link_to 'Transferings:', transferings_path
       Transfer .csv file from bank to Temp_transactions.
     %p
-      - if TempTransaction.any?
+      - if Transaction.where("users_id = ? and co = ?",current_user.id,0).any?
         %b= link_to 'Reallocate:', reallocate_path
         = Transaction.where("users_id = ? and co = ?",current_user.id,0).count
         registered
+%p
+  - if $lang == 1
+    %b= link_to 'Help:', main_menu_rus_help_path
+  - else
+    %b= link_to 'Help:', main_menu_help_path
   
+
   
  
 

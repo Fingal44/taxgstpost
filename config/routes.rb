@@ -50,10 +50,13 @@
   post 'transferings', to: 'transferings#create', :as => 'transfer_excel_data'
   get 'reallocate', to: 'reallocate#new'
   post 'reallocate', to: 'reallocate#create', :as => 'reallocate_data'
+  get 'main_menu_help', to: 'helps#main_menu'
+  get 'main_menu_rus_help', to: 'helps#main_menu_rus'
   post 'employees/:id/make_payment', to: 'employees#create', :as => 'employee_make_payment'
   get 'charts/indexfull', to: 'charts#indexfull'
   get 'transactions/indexfull', to: 'transactions#indexfull'
   get 'temp_transactions/indexfull', to: 'temp_transactions#indexfull'
+  get 'temp_transactions/clean_up', to: 'temp_transactions#clean_up'
   get 'future_transactions/indexfull', to: 'future_transactions#indexfull'
   get 'employees/indexfull', to: 'employees#indexfull'
   resources :employees do

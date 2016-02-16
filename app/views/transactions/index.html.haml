@@ -4,13 +4,12 @@
   %tbody
     %tr
       %th Date
-      %th Glcode
+      %th Section
       %th Code
       %th Amounttotal
       %th Gsttype
       %th Gstamount
       %th Netamount
-      %th User
       %th Co
       %th 
       %th
@@ -19,12 +18,11 @@
       %tr
         %td= transaction.date
         %td= transaction.chart_clones_id
-        %td= transaction.code
+        %td= link_to transaction.code, charts_path
         %td= transaction.amounttotal
         %td= transaction.gsttype
         %td= transaction.gstamount
         %td= transaction.netamount
-        %td= transaction.users_id
         %td= transaction.co
 
         %td

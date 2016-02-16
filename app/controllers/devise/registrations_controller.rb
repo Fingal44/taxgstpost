@@ -137,44 +137,10 @@ class Devise::RegistrationsController < DeviseController
       end
   
   # User defined programms
-=begin
-      def make_0_chart
-        file_data = ActionDispatch::Http::UploadedFile("charts.csv")
-        # file_data = Rails.root.join('/charts.csv')
-        byebug
-        if file_data.respond_to?(:read)
-          filen = file_data.read
-        elsif file_data.respond_to?(:path)
-          filen = File.read(file_data.path)
-        else
-          logger.error "Bad file_data: #{file_data.class.name}: #{file_data.inspect}"
-        end
-        ssk = Array.new
-        rr = filen.split(/\r?\n/)
-        i = 0
-        while !rr[i].nil?
-          ssk[i] = rr[i].split(',')
-          i+=1
-        end
-        rrc = rr.count-1
-        @chart = Chart.new
-        # ssc = ssk[i].count-1
-        for j in 0..rrc
 
-          @chart.glcode= ssk[j].glcode
-          @chart.code= ssk[j].code
-          @chart.gst= ssk[j].gst
-          @chart.header= ssk[j].header
-          @chart.content= ssk[j].content
-          @chartsn.users_id= 0
-        #  byebug
-          @chart.save
-        end
-      end
-=end
       def make_id_chart
         @charts = Chart.where(users_id: 0)
-      # byebug
+       # byebug
         @charts.each do |cc|
           @chartsn = Chart.new
           @chartsn.glcode= cc.glcode

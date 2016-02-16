@@ -109,4 +109,43 @@ private
         @chartclone.save
 
      end  # if 
+
+     if !AdminTable.all.any?
+        @admintable = AdminTable.new
+        @admintable.name = "users"
+        @admintable.lastmodified = DateTime.now
+        @admintable.created_at = DateTime.now
+        @admintable.updated_at = DateTime.now
+        @admintable.save
+        @admintable = AdminTable.new
+        @admintable.name = "charts"
+        @admintable.lastmodified = DateTime.now
+        @admintable.created_at = DateTime.now
+        @admintable.updated_at = DateTime.now
+        @admintable.save
+        @admintable = AdminTable.new
+        @admintable.name = "transactions"
+        @admintable.lastmodified = DateTime.now
+        @admintable.created_at = DateTime.now
+        @admintable.updated_at = DateTime.now
+        @admintable.save
+        @admintable = AdminTable.new
+        @admintable.name = "temp_transactions"
+        @admintable.lastmodified = DateTime.now
+        @admintable.created_at = DateTime.now
+        @admintable.updated_at = DateTime.now
+        @admintable.save
+        @admintable = AdminTable.new
+        @admintable.name = "future_transactions"
+        @admintable.lastmodified = DateTime.now
+        @admintable.created_at = DateTime.now
+        @admintable.updated_at = DateTime.now
+        @admintable.save
+        @admintable = AdminTable.new
+        @admintable.name = "employees"
+        @admintable.lastmodified = DateTime.now
+        @admintable.created_at = DateTime.now
+        @admintable.updated_at = DateTime.now
+        @admintable.save
+     end  # if
     end

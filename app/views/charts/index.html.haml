@@ -2,12 +2,11 @@
 %table
   %tbody
     %tr
-      %th Glcode
+      %th Section
       %th Code
       %th Content
       %th Header
       %th Gst
-      %th User
       %th
       %th
       %th 
@@ -18,7 +17,6 @@
         %td= chart.content
         %td= chart.header
         %td= chart.gst
-        %td= chart.users_id
         %td
         %td= link_to 'Show', chart
         %td= link_to 'Edit', edit_chart_path(chart)
@@ -28,3 +26,9 @@
 = link_to 'New Chart', new_chart_path
 %br
 %b= link_to 'Back', controller: '/visitors', action: 'main_menu', class: 'navbar-brand'
+%br
+%b= link_to 'Back to Future_Transactions', controller: '/future_transactions', action: 'index'
+%br
+%b= link_to 'Back to Temp_Transactions', controller: '/temp_transactions', action: 'index'
+%br
+%b= link_to 'Back to Transactions', controller: '/transactions', action: 'index'

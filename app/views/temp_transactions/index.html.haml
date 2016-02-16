@@ -4,36 +4,27 @@
     %tbody
       %tr
         %th Date
-          
-        %th Glcode
-       
+        %th Section
         %th Code
-        
         %th Amounttotal
         %th Gsttype
         %th Gstamount
         %th Netamount
-        %th User
         %th Co
         %th What
         %th Who
         %th For_Moving
-        
         %th
         %th
       - @temp_transactions.each do |transaction| 
         %tr
           %td= transaction.date
-          
           %td= transaction.chart_clones_id
-          
-          %td= transaction.code
-          
+          %td= link_to transaction.code, charts_path
           %td= transaction.amounttotal
           %td= transaction.gsttype
           %td= transaction.gstamount
           %td= transaction.netamount
-          %td= transaction.users_id
           %td= transaction.co
           %td= transaction.what
           %td= transaction.who        
@@ -51,3 +42,7 @@
   = link_to 'New Temp_Transaction', new_temp_transaction_path
 %br
 %b= link_to 'Back', controller: '/visitors', action: 'main_menu', class: 'navbar-brand'
+%br
+%br
+%br
+%b= link_to 'Clean up table', controller: 'temp_transactions', action: 'clean_up', data: { confirm: 'Are you sure?' } 

@@ -23,3 +23,5 @@
           %b= link_to 'Edit', edit_user_path(user) 
         %td
           %b= link_to 'Destroy', user_path(user), method: :delete, :class=>:destroy, data: { confirm: 'Are you sure?' }
+
+%b= link_to 'Back', controller: '/visitors', action: 'adminservice', class: 'navbar-brand'

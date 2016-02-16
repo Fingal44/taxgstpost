@@ -133,13 +133,26 @@ class TempTransactionsController < ApplicationController
     end
   end
 
- def update_cur_codes
+  def update_cur_codes
   
    @partcharts = Chart.where("users_id = ? and glcode = ? and header = ?" , current_user.id, params[:chart_clones_id],0)
    respond_to do |format|
      format.js
    end
- end
+  end
+
+  def clean_up
+    @sd = Datesetting.where("users_id = ?", current_user.id)
+    @ed = Datesetting.where("users_id = ?", current_user.id)
+    @temp_transactions = TempTransaction.where("date >= ? and date <= ? and users_id = ?", @sd.first.startdate, @ed.first.enddate, current_user.id)
+    # byebug
+    @temp_transactions.destroy_all
+    # byebug
+    respond_to do |format|
+      format.html { redirect_to temp_transactions_url, notice: 'Table temp transactions was successfully cleaned up.' }
+      format.json { head :no_content }
+    end  
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
