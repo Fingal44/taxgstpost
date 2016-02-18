@@ -13,3 +13,28 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//validador jquery
+$('#new_user').validate({
+  rules: {
+    'user[password]': {
+      required: true,
+      maxlength: 100
+    },
+    'user[email]': {
+      required: true, 
+      email: true, 
+      maxlength: 150
+    }
+  },
+  messages: {
+    'user[password]': {
+        required: "Required Field",
+        maxlength: "Name too big, max size 100"
+    },
+    'user[email]': {
+        required: "Required Field",
+        email: "Invalid email",
+        maxlength: "Email too big, max size 150"
+    }
+  }
+});

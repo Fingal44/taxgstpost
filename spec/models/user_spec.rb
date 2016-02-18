@@ -17,6 +17,7 @@ describe User do
 
 end
 =end
+require 'rails_helper'
 require 'spec_helper'
 describe User do
   it "has a valid factory" do

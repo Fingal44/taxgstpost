@@ -1,0 +1,5 @@
+/* Change color to error messages for validation with jQuery */
+label.error{
+    color: white !important;
+    font-weight: normal !important;
+} 
